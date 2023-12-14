@@ -13,9 +13,21 @@ random_word_easy = random.choice(words_easy)
 random_word_medium = random.choice(words_medium)
 random_word_hard = random.choice(words_hard)
 
+# prints out how many letters the choosen word has
+print('The word has', len(random_word_easy), 'letters')
+
 # variables that will store the correct and wrong guesses
-correct_guess = []
+correct_guess = ['_'] * len(random_word_easy)
 wrong_guess = []
+
+# function that shows how many letters the choosen word
+def update_correct_letters():
+    for i in correct_guess:
+        print(i, end=' ')
+    print()
+
+
+update_correct_letters()
 
 ''' loop that will check if the guess letter is correct or not and
 continue until the word is complete or the man is hanged '''
