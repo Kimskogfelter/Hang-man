@@ -40,9 +40,14 @@ while True:
     guess = input("Guess a letter: ")
 
     # checks if the guessed letter is on the choosen word
+    # and puts it in the correct guess index if true
     if guess in random_word_easy:
-        correct_guess.append(guess)
-        print(f"{correct_guess} is correct")
+        index = 0
+        for i in random_word_easy:
+            if i == guess:
+                correct_guess[index] = guess
+            index += 1
+        update_correct_letters()
     else:
         wrong_guess.append(guess)
         print(f"{wrong_guess} is wrong")
