@@ -20,13 +20,17 @@ wrong_guess = []
 ''' loop that will check if the guess letter is correct or not and
 continue until the word is complete or the man is hanged '''
 while True:
+
+    # prints the string below between the guessed letters
+    print("-----------------------------")
+
     # variable for the guess the user will choose
     guess = input("Guess a letter: ")
 
     # checks if the guessed letter is on the choosen word
     if guess in random_word_easy:
         correct_guess.append(guess)
-        print(correct_guess)
+        print(f"{correct_guess} is correct")
     else:
         wrong_guess.append(guess)
-        print(wrong_guess)
+        print(f"{wrong_guess} is wrong")

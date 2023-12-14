@@ -239,14 +239,8 @@ I love games myself so I knew that I wanted to make some kind of game. When I fi
 
 ---
 
-#### MEDIA
-
-- [https://freepngimg.com/] for images
-
 #### CODE
 
-- I looked on this tutorial on youtube to help me make the memory game [https://www.youtube.com/watch?v=t3cydTwfEnM]
-- The media querys comments in css are taken from Safari Retreat project. [https://github.com/Kimskogfelter/Safari-Retreat]
-- Code for the meta tags for the search engines results are from the Safari Retreat project [https://github.com/Kimskogfelter/Safari-Retreat]
+- I looked on these two tutorials on youtube to help me make the game [https://www.youtube.com/watch?v=Ff--def_1q0][https://www.youtube.com/watch?v=7sVnul-StrU]
 
 #### All the thanks to the lovely students on slack for helping out when needed and my mentor Ronan for being so supportive and helpfull
