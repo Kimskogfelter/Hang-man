@@ -12,10 +12,11 @@ random_word_easy = random.choice(words_easy)
 random_word_medium = random.choice(words_medium)
 random_word_hard = random.choice(words_hard)
 
-# variables for the different difficulties
-Easy = random_word_easy
-Medium = random_word_medium
-Hard = random_word_hard
+# variables for the different difficulties that select
+# the correct function
+Easy = easy_difficulty()
+Medium = medium_difficulty()
+Hard = hard_difficulty()
 
 # prints out the initial strings when the game starts
 print('Hi and welcome to hangman.')
