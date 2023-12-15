@@ -49,5 +49,10 @@ while True:
             index += 1
         update_correct_letters()
     else:
-        wrong_guess.append(guess)
-        print(f"{wrong_guess} is wrong")
+        if guess not in wrong_guess:
+            wrong_guess.append(guess)
+        else:
+            print('You already guessed that')
+    if '_' not in correct_guess:
+        print('You won!')
+        break
