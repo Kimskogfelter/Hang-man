@@ -48,11 +48,21 @@ while True:
                 correct_guess[index] = guess
             index += 1
         update_correct_letters()
+    # checks if the guessed letter already is guessed
     else:
         if guess not in wrong_guess:
             wrong_guess.append(guess)
         else:
             print('You already guessed that')
+        # prints out if the user guessed a wrong letter
+        print(f'You guessed the wrong letter{wrong_guess}')
+    # checks if the wrong guesses is more then 5
+    # then prints the losing statement
+    if len(wrong_guess) > 5:
+        print('You lose!')
+        print(f'The correct word was {random_word_easy}')
+        break
+    # checks if all the letters are correct and prints the winning statement
     if '_' not in correct_guess:
         print('You won!')
         break
