@@ -13,7 +13,8 @@ random_word_hard = random.choice(words_hard)
 
 # prints out the initial strings when the game starts
 print('Hi and welcome to hangman.')
-print('You got 3 different difficulties to choose from: easy, medium and hard.')
+print('You got 3 different difficulties to choose from:')
+print('Easy, Medium and Hard.')
 print('You got 6 tries to guess the correct word.')
 print('   ',  '------')
 print('   ',  '|    |')
@@ -28,6 +29,8 @@ print('The word has', len(random_word_easy), 'letters')
 
 # variables that will store the correct and wrong guesses
 correct_guess = ['_'] * len(random_word_easy)
+correct_guess_medium = ['_'] * len(random_word_medium)
+correct_guess_hard = ['_'] * len(random_word_hard)
 wrong_guess = []
 
 # function that prints out the different parts of the hang man
@@ -99,8 +102,10 @@ def update_correct_letters():
 
 update_correct_letters()
 
+
 ''' loop that will check if the guess letter is correct or not and
 continue until the word is complete or the man is hanged '''
+# main loop
 while True:
 
     # prints the string below between the guessed letters
@@ -118,9 +123,11 @@ while True:
                 correct_guess[index] = guess
             index += 1
         update_correct_letters()
+        hangman_parts(len(wrong_guess))
     # checks if the guessed letter already is guessed or not
     # either prints out more of the hangman if the guess is wrong
-    # print out that the user has used that letter already if the letter is already used
+    # print out that the user has used that
+    # letter already if the letter is already used
     else:
         if guess not in wrong_guess:
             wrong_guess.append(guess)
