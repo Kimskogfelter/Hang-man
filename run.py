@@ -20,6 +20,67 @@ print('The word has', len(random_word_easy), 'letters')
 correct_guess = ['_'] * len(random_word_easy)
 wrong_guess = []
 
+# function that prints out the different parts of the hang man
+# when the user guesses a wrong letter
+def hangman_parts(x):
+    if x == 0:
+        print('   ',  '------')
+        print('   ',  '|    |')
+        print('   ',  '|     ')
+        print('   ',  '|     ')
+        print('   ',  '|     ')
+        print('   ',  '|     ')
+        print('--------------')
+    if x == 1:
+        print('   ',  '------')
+        print('   ',  '|    |')
+        print('   ',  '|    O')
+        print('   ',  '|     ')
+        print('   ',  '|     ')
+        print('   ',  '|     ')
+        print('--------------')
+    if x == 2:
+        print('   ',  '------')
+        print('   ',  '|    |')
+        print('   ',  '|    O')
+        print('   ',  '|   -|')
+        print('   ',  '|     ')
+        print('   ',  '|     ')
+        print('--------------')
+    if x == 3:
+        print('   ',  '------')
+        print('   ',  '|    |')
+        print('   ',  '|    O')
+        print('   ',  '|   -|-')
+        print('   ',  '|     ')
+        print('   ',  '|     ')
+        print('--------------')
+    if x == 4:
+        print('   ',  '------')
+        print('   ',  '|    |')
+        print('   ',  '|    O')
+        print('   ',  '|   -|-')
+        print('   ',  '|    |')
+        print('   ',  '|     ')
+        print('--------------')
+    if x == 5:
+        print('   ',  '------')
+        print('   ',  '|    |')
+        print('   ',  '|    O')
+        print('   ',  '|   -|-')
+        print('   ',  '|    |')
+        print('   ',  '|   / ')
+        print('--------------')
+    if x == 6:
+        print('   ',  '------')
+        print('   ',  '|    |')
+        print('   ',  '|    O')
+        print('   ',  '|   -|-')
+        print('   ',  '|    |')
+        print('   ',  '|   / \\')
+        print('---------------')
+
+
 # function that shows how many letters the choosen word
 def update_correct_letters():
     for i in correct_guess:
