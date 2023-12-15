@@ -1,5 +1,3 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import random
 
@@ -12,6 +10,18 @@ words_hard = ['hippopotamus', 'hamburger', 'spaceship', 'kindergarden',]
 random_word_easy = random.choice(words_easy)
 random_word_medium = random.choice(words_medium)
 random_word_hard = random.choice(words_hard)
+
+# prints out the initial strings when the game starts
+print('Hi and welcome to hangman.')
+print('You got 3 different difficulties to choose from: easy, medium and hard.')
+print('You got 6 tries to guess the correct word.')
+print('   ',  '------')
+print('   ',  '|    |')
+print('   ',  '|     ')
+print('   ',  '|     ')
+print('   ',  '|     ')
+print('   ',  '|     ')
+print('--------------')
 
 # prints out how many letters the choosen word has
 print('The word has', len(random_word_easy), 'letters')
@@ -87,7 +97,6 @@ def update_correct_letters():
         print(i, end=' ')
     print()
 
-
 update_correct_letters()
 
 ''' loop that will check if the guess letter is correct or not and
@@ -109,10 +118,13 @@ while True:
                 correct_guess[index] = guess
             index += 1
         update_correct_letters()
-    # checks if the guessed letter already is guessed
+    # checks if the guessed letter already is guessed or not
+    # either prints out more of the hangman if the guess is wrong
+    # print out that the user has used that letter already if the letter is already used
     else:
         if guess not in wrong_guess:
             wrong_guess.append(guess)
+            hangman_parts(len(wrong_guess))
         else:
             print('You already guessed that')
         # prints out if the user guessed a wrong letter
