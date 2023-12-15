@@ -1,5 +1,6 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import random
+from time import sleep
 
 # variables that stores words used for the different lists
 words_easy = ['cat', 'dog', 'bear', 'lion', 'hat',]
@@ -30,6 +31,8 @@ print('   ',  '|     ')
 print('--------------')
 difficulty = input("Please choose a degree of difficulty: ")
 
+print('Let me think of a word...')
+
 # function that makes the user wait between choices
 def waiting_time():
     for i in range(5):
@@ -37,10 +40,8 @@ def waiting_time():
         sleep(.5)
     print()
 
-waiting_time()
 
-# prints out how many letters the choosen word has
-print('The word has', len(random_word_easy), 'letters')
+waiting_time()
 
 # variables that will store the correct and wrong guesses
 correct_guess_easy = ['_'] * len(random_word_easy)
@@ -109,139 +110,188 @@ def hangman_parts(x):
         print('---------------')
 
 
-# function that shows how many letters the choosen word
-def update_correct_letters():
+# functions that shows how many letters the choosen word have
+def update_correct_letters_easy():
     for i in correct_guess_easy:
         print(i, end=' ')
     print()
 
-update_correct_letters()
+
+def update_correct_letters_medium():
+    for i in correct_guess_medium:
+        print(i, end=' ')
+    print()
 
 
-''' loop that will check if the guess letter is correct or not and
-continue until the word is complete or the man is hanged '''
-# main loop for EASY difficulty
-while True:
+def update_correct_letters_hard():
+    for i in correct_guess_hard:
+        print(i, end=' ')
+    print()
 
-    # prints the string below between the guessed letters
-    print("-----------------------------")
 
-    # variable for the guess the user will choose
-    guess = input("Guess a letter: ")
+# main function for EASY difficulty
+def easy_difficulty():
+    # prints out how many letters the choosen word has
+    print('The word has', len(random_word_easy), 'letters')
 
-    # checks if the guessed letter is on the choosen word
-    # and puts it in the correct guess index if true
-    if guess in random_word_easy:
-        index = 0
-        for i in random_word_easy:
-            if i == guess:
-                correct_guess_easy[index] = guess
-            index += 1
-        update_correct_letters()
-        hangman_parts(len(wrong_guess))
-    # checks if the guessed letter already is guessed or not
-    # either prints out more of the hangman if the guess is wrong
-    # print out that the user has used that
-    # letter already if the letter is already used
-    else:
-        if guess not in wrong_guess:
-            wrong_guess.append(guess)
+    while True:
+
+        # shows how many letters the word has
+        update_correct_letters_easy()
+        print('   ',  '------')
+        print('   ',  '|    |')
+        print('   ',  '|     ')
+        print('   ',  '|     ')
+        print('   ',  '|     ')
+        print('   ',  '|     ')
+        print('--------------')
+
+        # prints the string below between the guessed letters
+        print("-----------------------------")
+
+        # variable for the guess the user will choose
+        guess = input("Guess a letter: ")
+
+        # checks if the guessed letter is on the choosen word
+        # and puts it in the correct guess index if true
+        if guess in random_word_easy:
+            index = 0
+            for i in random_word_easy:
+                if i == guess:
+                    correct_guess_easy[index] = guess
+                index += 1
             hangman_parts(len(wrong_guess))
+            update_correct_letters_easy()
+        # checks if the guessed letter already is guessed or not
+        # either prints out more of the hangman if the guess is wrong
+        # print out that the user has used that
+        # letter already if the letter is already used
         else:
-            print('You already guessed that')
-        # prints out if the user guessed a wrong letter
-        print(f'You guessed the wrong letter{wrong_guess}')
-    # checks if the wrong guesses is more then 5
-    # then prints the losing statement
-    if len(wrong_guess) > 5:
-        print('You lose!')
-        print(f'The correct word was {random_word_easy}')
-        break
-    # checks if all the letters are correct and prints the winning statement
-    if '_' not in correct_guess_easy:
-        print('You won!')
-        break
+            if guess not in wrong_guess:
+                wrong_guess.append(guess)
+                hangman_parts(len(wrong_guess))
+            else:
+                print('You already guessed that')
+            # prints out if the user guessed a wrong letter
+            print(f'You guessed the wrong letter{wrong_guess}')
+        # checks if the wrong guesses is more then 5
+        # then prints the losing statement
+        if len(wrong_guess) > 5:
+            print('You lose!')
+            print(f'The correct word was {random_word_easy}')
+            break
+        # checks if all the letters are correct and prints the winning statement
+        if '_' not in correct_guess_easy:
+            print('You won!')
+            break
 
-# main loop for MEDIUM difficulty
-while True:
+# main function for MEDIUM difficulty
+def medium_difficulty():
+    # prints out how many letters the choosen word has
+    print('The word has', len(random_word_medium), 'letters')
 
-    # prints the string below between the guessed letters
-    print("-----------------------------")
+    while True:
+        # shows how many letters the word has
+        update_correct_letters_medium()
+        print('   ',  '------')
+        print('   ',  '|    |')
+        print('   ',  '|     ')
+        print('   ',  '|     ')
+        print('   ',  '|     ')
+        print('   ',  '|     ')
+        print('--------------')
 
-    # variable for the guess the user will choose
-    guess = input("Guess a letter: ")
+        # prints the string below between the guessed letters
+        print("-----------------------------")
 
-    # checks if the guessed letter is on the choosen word
-    # and puts it in the correct guess index if true
-    if guess in random_word_medium:
-        index = 0
-        for i in random_word_medium:
-            if i == guess:
-                correct_guess_medium[index] = guess
-            index += 1
-        update_correct_letters()
-        hangman_parts(len(wrong_guess))
-    # checks if the guessed letter already is guessed or not
-    # either prints out more of the hangman if the guess is wrong
-    # print out that the user has used that
-    # letter already if the letter is already used
-    else:
-        if guess not in wrong_guess:
-            wrong_guess.append(guess)
+        # variable for the guess the user will choose
+        guess = input("Guess a letter: ")
+
+        # checks if the guessed letter is on the choosen word
+        # and puts it in the correct guess index if true
+        if guess in random_word_medium:
+            index = 0
+            for i in random_word_medium:
+                if i == guess:
+                    correct_guess_medium[index] = guess
+                index += 1
             hangman_parts(len(wrong_guess))
+            update_correct_letters_medium()
+        # checks if the guessed letter already is guessed or not
+        # either prints out more of the hangman if the guess is wrong
+        # print out that the user has used that
+        # letter already if the letter is already used
         else:
-            print('You already guessed that')
-        # prints out if the user guessed a wrong letter
-        print(f'You guessed the wrong letter{wrong_guess}')
-    # checks if the wrong guesses is more then 5
-    # then prints the losing statement
-    if len(wrong_guess) > 5:
-        print('Game Over. You lose!')
-        print(f'The correct word was {random_word_medium}')
-        break
-    # checks if all the letters are correct and prints the winning statement
-    if '_' not in correct_guess_medium:
-        print('You won! Congratulations!')
-        break
+            if guess not in wrong_guess:
+                wrong_guess.append(guess)
+                hangman_parts(len(wrong_guess))
+            else:
+                print('You already guessed that')
+            # prints out if the user guessed a wrong letter
+            print(f'You guessed the wrong letter{wrong_guess}')
+        # checks if the wrong guesses is more then 5
+        # then prints the losing statement
+        if len(wrong_guess) > 5:
+            print('Game Over. You lose!')
+            print(f'The correct word was {random_word_medium}')
+            break
+        # checks if all the letters are correct and prints the winning statement
+        if '_' not in correct_guess_medium:
+            print('You won! Congratulations!')
+            break
 
-# main loop for HARD difficulty
-while True:
+# main function for HARD difficulty
+def hard_difficulty():
+    # prints out how many letters the choosen word has
+    print('The word has', len(random_word_hard), 'letters')
 
-    # prints the string below between the guessed letters
-    print("-----------------------------")
+    while True:
 
-    # variable for the guess the user will choose
-    guess = input("Guess a letter: ")
+        # shows how many letters the word has
+        update_correct_letters_hard()
+        print('   ',  '------')
+        print('   ',  '|    |')
+        print('   ',  '|     ')
+        print('   ',  '|     ')
+        print('   ',  '|     ')
+        print('   ',  '|     ')
+        print('--------------')
 
-    # checks if the guessed letter is on the choosen word
-    # and puts it in the correct guess index if true
-    if guess in random_word_hard:
-        index = 0
-        for i in random_word_hard:
-            if i == guess:
-                correct_guess_hard[index] = guess
-            index += 1
-        update_correct_letters()
-        hangman_parts(len(wrong_guess))
-    # checks if the guessed letter already is guessed or not
-    # either prints out more of the hangman if the guess is wrong
-    # print out that the user has used that
-    # letter already if the letter is already used
-    else:
-        if guess not in wrong_guess:
-            wrong_guess.append(guess)
+        # prints the string below between the guessed letters
+        print("-----------------------------")
+
+        # variable for the guess the user will choose
+        guess = input("Guess a letter: ")
+
+        # checks if the guessed letter is on the choosen word
+        # and puts it in the correct guess index if true
+        if guess in random_word_hard:
+            index = 0
+            for i in random_word_hard:
+                if i == guess:
+                    correct_guess_hard[index] = guess
+                index += 1
             hangman_parts(len(wrong_guess))
+            update_correct_letters_hard()
+        # checks if the guessed letter already is guessed or not
+        # either prints out more of the hangman if the guess is wrong
+        # print out that the user has used that
+        # letter already if the letter is already used
         else:
-            print('You already guessed that')
-        # prints out if the user guessed a wrong letter
-        print(f'You guessed the wrong letter{wrong_guess}')
-    # checks if the wrong guesses is more then 5
-    # then prints the losing statement
-    if len(wrong_guess) > 5:
-        print('Game Over. You lose!')
-        print(f'The correct word was {random_word_hard}')
-        break
-    # checks if all the letters are correct and prints the winning statement
-    if '_' not in correct_guess_hard:
-        print('You won! Congratulations!')
-        break
+            if guess not in wrong_guess:
+                wrong_guess.append(guess)
+                hangman_parts(len(wrong_guess))
+            else:
+                print('You already guessed that')
+            # prints out if the user guessed a wrong letter
+            print(f'You guessed the wrong letter{wrong_guess}')
+        # checks if the wrong guesses is more then 5
+        # then prints the losing statement
+        if len(wrong_guess) > 5:
+            print('Game Over. You lose!')
+            print(f'The correct word was {random_word_hard}')
+            break
+        # checks if all the letters are correct and prints the winning statement
+        if '_' not in correct_guess_hard:
+            print('You won! Congratulations!')
+            break
