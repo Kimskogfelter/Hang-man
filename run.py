@@ -147,8 +147,8 @@ def easy_difficulty():
         # checks if the wrong guesses is more then 5
         # then prints the losing statement
         if len(wrong_guess) > 5:
-            print('You lose!')
             print(f'The correct word was {random_word_easy}')
+            print('Game Over. You lose!')
             break
         # prints the winning statement
         if '_' not in correct_guess_easy:
@@ -195,8 +195,8 @@ def medium_difficulty():
         # checks if the wrong guesses is more then 5
         # then prints the losing statement
         if len(wrong_guess) > 5:
-            print('Game Over. You lose!')
             print(f'The correct word was {random_word_medium}')
+            print('Game Over. You lose!')
             break
         # prints the winning statement
         if '_' not in correct_guess_medium:
@@ -243,8 +243,8 @@ def hard_difficulty():
         # checks if the wrong guesses is more then 5
         # then prints the losing statement
         if len(wrong_guess) > 5:
-            print('Game Over. You lose!')
             print(f'The correct word was {random_word_hard}')
+            print('Game Over. You lose!')
             break
         # prints the winning statement
         if '_' not in correct_guess_hard:
