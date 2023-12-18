@@ -121,7 +121,7 @@ def easy_difficulty():
        
 
         # prints the string below between the guessed letters
-        print("-----------------------------")
+        print("==========================")
 
         # variable for the guess the user will choose
         guess = input("Guess a letter: ")
@@ -171,7 +171,7 @@ def medium_difficulty():
         update_correct_letters_medium()
 
         # prints the string below between the guessed letters
-        print("-----------------------------")
+        print("==========================")
 
         # variable for the guess the user will choose
         guess = input("Guess a letter: ")
@@ -222,7 +222,7 @@ def hard_difficulty():
         update_correct_letters_hard()
 
         # prints the string below between the guessed letters
-        print("-----------------------------")
+        print("==========================")
 
         # variable for the guess the user will choose
         guess = input("Guess a letter: ")
