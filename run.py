@@ -27,9 +27,6 @@ def waiting_time():
         sleep(.5)
     print()
 
-
-waiting_time()
-
 # function that prints out the different parts of the hang man
 # when the user guesses a wrong letter
 
@@ -121,13 +118,7 @@ def easy_difficulty():
 
         # shows how many letters the word has
         update_correct_letters_easy()
-        print('   ',  '------')
-        print('   ',  '|    |')
-        print('   ',  '|     ')
-        print('   ',  '|     ')
-        print('   ',  '|     ')
-        print('   ',  '|     ')
-        print('--------------')
+       
 
         # prints the string below between the guessed letters
         print("-----------------------------")
@@ -311,7 +302,10 @@ difficulty_functions = {
 chosen_difficulty_function = difficulty_functions.get(difficulty)
 if chosen_difficulty_function:
     print(f'Let me think of a {difficulty} word...')
+    waiting_time()
     chosen_difficulty_function()  # Call the chosen difficulty function
 else:
     print("Invalid difficulty.")
     print("Please choose either 'easy', 'medium', or 'hard'.")
+
+
