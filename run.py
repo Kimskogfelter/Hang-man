@@ -276,11 +276,18 @@ difficulty_functions = {
 }
 
 # Check if the entered difficulty is valid
-chosen_difficulty_function = difficulty_functions.get(difficulty)
-if chosen_difficulty_function:
-    print(f'Let me think of a {difficulty} word...')
-    waiting_time()
-    chosen_difficulty_function()  # Call the chosen difficulty function
-else:
-    print("Invalid difficulty.")
-    print("Please choose either 'easy', 'medium', or 'hard'.")
+while True:
+    difficulty = input("Please choose a degree of difficulty"
+                        "'easy', 'medium', or 'hard'): ")
+
+    chosen_difficulty_function = difficulty_functions.get(difficulty)
+
+    if chosen_difficulty_function:
+        print(f'Let me think of a {difficulty} word...')
+        waiting_time()
+        chosen_difficulty_function()  # Call the chosen difficulty function
+        break  # Exit the loop if a valid difficulty is provided
+    else:
+        print("Invalid difficulty. Please choose either 'easy', 'medium', "
+             "or 'hard'.")
+
