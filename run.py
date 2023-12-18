@@ -169,13 +169,6 @@ def medium_difficulty():
     while True:
         # shows how many letters the word has
         update_correct_letters_medium()
-        print('   ',  '------')
-        print('   ',  '|    |')
-        print('   ',  '|     ')
-        print('   ',  '|     ')
-        print('   ',  '|     ')
-        print('   ',  '|     ')
-        print('--------------')
 
         # prints the string below between the guessed letters
         print("-----------------------------")
@@ -227,13 +220,6 @@ def hard_difficulty():
 
         # shows how many letters the word has
         update_correct_letters_hard()
-        print('   ',  '------')
-        print('   ',  '|    |')
-        print('   ',  '|     ')
-        print('   ',  '|     ')
-        print('   ',  '|     ')
-        print('   ',  '|     ')
-        print('--------------')
 
         # prints the string below between the guessed letters
         print("-----------------------------")
