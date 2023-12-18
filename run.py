@@ -115,11 +115,7 @@ def easy_difficulty():
     print('The word has', len(random_word_easy), 'letters')
 
     while True:
-
-        # shows how many letters the word has
-        update_correct_letters_easy()
        
-
         # prints the string below between the guessed letters
         print("==========================")
 
@@ -167,9 +163,7 @@ def medium_difficulty():
     print('The word has', len(random_word_medium), 'letters')
 
     while True:
-        # shows how many letters the word has
-        update_correct_letters_medium()
-
+        
         # prints the string below between the guessed letters
         print("==========================")
 
@@ -217,10 +211,7 @@ def hard_difficulty():
     print('The word has', len(random_word_hard), 'letters')
 
     while True:
-
-        # shows how many letters the word has
-        update_correct_letters_hard()
-
+        
         # prints the string below between the guessed letters
         print("==========================")
 
@@ -293,5 +284,3 @@ if chosen_difficulty_function:
 else:
     print("Invalid difficulty.")
     print("Please choose either 'easy', 'medium', or 'hard'.")
-
-
