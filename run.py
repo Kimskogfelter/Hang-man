@@ -1,4 +1,3 @@
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
 import random
 from time import sleep
 
@@ -114,8 +113,7 @@ def easy_difficulty():
     # prints out how many letters the choosen word has
     print('The word has', len(random_word_easy), 'letters')
 
-    while True:
-       
+    while True:   
         # prints the string below between the guessed letters
         print("==========================")
 
@@ -140,6 +138,7 @@ def easy_difficulty():
             if guess not in wrong_guess:
                 wrong_guess.append(guess)
                 hangman_parts(len(wrong_guess))
+                update_correct_letters_easy()
             else:
                 print('You already guessed that')
             # prints out if the user guessed a wrong letter
@@ -162,8 +161,7 @@ def medium_difficulty():
     # prints out how many letters the choosen word has
     print('The word has', len(random_word_medium), 'letters')
 
-    while True:
-        
+    while True:       
         # prints the string below between the guessed letters
         print("==========================")
 
@@ -188,6 +186,7 @@ def medium_difficulty():
             if guess not in wrong_guess:
                 wrong_guess.append(guess)
                 hangman_parts(len(wrong_guess))
+                update_correct_letters_medium()
             else:
                 print('You already guessed that')
             # prints out if the user guessed a wrong letter
@@ -210,8 +209,7 @@ def hard_difficulty():
     # prints out how many letters the choosen word has
     print('The word has', len(random_word_hard), 'letters')
 
-    while True:
-        
+    while True:      
         # prints the string below between the guessed letters
         print("==========================")
 
@@ -236,6 +234,7 @@ def hard_difficulty():
             if guess not in wrong_guess:
                 wrong_guess.append(guess)
                 hangman_parts(len(wrong_guess))
+                update_correct_letters_hard()
             else:
                 print('You already guessed that')
             # prints out if the user guessed a wrong letter
@@ -264,9 +263,6 @@ print('   ',  '|     ')
 print('   ',  '|     ')
 print('   ',  '|     ')
 print('--------------')
-# Ask the user to choose a difficulty
-difficulty = input("Please choose a degree of difficulty "
-                   "('easy', 'medium', or 'hard'): ")
 
 # Map difficulty names to their corresponding functions
 difficulty_functions = {
@@ -277,8 +273,8 @@ difficulty_functions = {
 
 # Check if the entered difficulty is valid
 while True:
-    difficulty = input("Please choose a degree of difficulty"
-                        "'easy', 'medium', or 'hard'): ")
+    difficulty = input("Please choose a degree of difficulty "
+                        "('easy', 'medium', or 'hard'): ")
 
     chosen_difficulty_function = difficulty_functions.get(difficulty)
 
@@ -288,6 +284,4 @@ while True:
         chosen_difficulty_function()  # Call the chosen difficulty function
         break  # Exit the loop if a valid difficulty is provided
     else:
-        print("Invalid difficulty. Please choose either 'easy', 'medium', "
-             "or 'hard'.")
-
+        print("Invalid difficulty.")
