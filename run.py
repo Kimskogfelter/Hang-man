@@ -120,29 +120,34 @@ def easy_difficulty():
         # variable for the guess the user will choose
         guess = input("Guess a letter: ")
 
-        # checks if the guessed letter is on the choosen word
-        # and puts it in the correct guess index if true
-        if guess in random_word_easy:
-            index = 0
-            for i in random_word_easy:
-                if i == guess:
-                    correct_guess_easy[index] = guess
-                index += 1
-            hangman_parts(len(wrong_guess))
-            update_correct_letters_easy()
-        # checks if the guessed letter already is guessed or not
-        # either prints out more of the hangman if the guess is wrong
-        # print out that the user has used that
-        # letter already if the letter is already used
-        else:
-            if guess not in wrong_guess:
-                wrong_guess.append(guess)
+        # Check if the guessed input is more than one letter
+        if len(guess) == 1:
+
+            # checks if the guessed letter is on the choosen word
+            # and puts it in the correct guess index if true
+            if guess in random_word_easy:
+                index = 0
+                for i in random_word_easy:
+                    if i == guess:
+                        correct_guess_easy[index] = guess
+                    index += 1
                 hangman_parts(len(wrong_guess))
                 update_correct_letters_easy()
+            # checks if the guessed letter already is guessed or not
+            # either prints out more of the hangman if the guess is wrong
+            # print out that the user has used that
+            # letter already if the letter is already used
             else:
-                print('You already guessed that')
-            # prints out if the user guessed a wrong letter
-            print(f'Wrong letter {wrong_guess}')
+                if guess not in wrong_guess:
+                    wrong_guess.append(guess)
+                    hangman_parts(len(wrong_guess))
+                    update_correct_letters_easy()
+                else:
+                    print('You already guessed that')
+                # prints out if the user guessed a wrong letter
+                print(f'Wrong letter {wrong_guess}')
+        else:
+            print("Please guess only one letter at a time.")
         # checks if the wrong guesses is more then 5
         # then prints the losing statement
         if len(wrong_guess) > 5:
@@ -168,29 +173,34 @@ def medium_difficulty():
         # variable for the guess the user will choose
         guess = input("Guess a letter: ")
 
-        # checks if the guessed letter is on the choosen word
-        # and puts it in the correct guess index if true
-        if guess in random_word_medium:
-            index = 0
-            for i in random_word_medium:
-                if i == guess:
-                    correct_guess_medium[index] = guess
-                index += 1
-            hangman_parts(len(wrong_guess))
-            update_correct_letters_medium()
-        # checks if the guessed letter already is guessed or not
-        # either prints out more of the hangman if the guess is wrong
-        # print out that the user has used that
-        # letter already if the letter is already used
-        else:
-            if guess not in wrong_guess:
-                wrong_guess.append(guess)
+        # Check if the guessed input is more than one letter
+        if len(guess) == 1:
+
+            # checks if the guessed letter is on the choosen word
+            # and puts it in the correct guess index if true
+            if guess in random_word_medium:
+                index = 0
+                for i in random_word_medium:
+                    if i == guess:
+                        correct_guess_medium[index] = guess
+                    index += 1
                 hangman_parts(len(wrong_guess))
                 update_correct_letters_medium()
+            # checks if the guessed letter already is guessed or not
+            # either prints out more of the hangman if the guess is wrong
+            # print out that the user has used that
+            # letter already if the letter is already used
             else:
-                print('You already guessed that')
-            # prints out if the user guessed a wrong letter
-            print(f'Wrong letter {wrong_guess}')
+                if guess not in wrong_guess:
+                    wrong_guess.append(guess)
+                    hangman_parts(len(wrong_guess))
+                    update_correct_letters_medium()
+                else:
+                    print('You already guessed that')
+                # prints out if the user guessed a wrong letter
+                print(f'Wrong letter {wrong_guess}')
+        else:
+            print("Please guess only one letter at a time.")
         # checks if the wrong guesses is more then 5
         # then prints the losing statement
         if len(wrong_guess) > 5:
@@ -216,29 +226,34 @@ def hard_difficulty():
         # variable for the guess the user will choose
         guess = input("Guess a letter: ")
 
-        # checks if the guessed letter is on the choosen word
-        # and puts it in the correct guess index if true
-        if guess in random_word_hard:
-            index = 0
-            for i in random_word_hard:
-                if i == guess:
-                    correct_guess_hard[index] = guess
-                index += 1
-            hangman_parts(len(wrong_guess))
-            update_correct_letters_hard()
-        # checks if the guessed letter already is guessed or not
-        # either prints out more of the hangman if the guess is wrong
-        # print out that the user has used that
-        # letter already if the letter is already used
-        else:
-            if guess not in wrong_guess:
-                wrong_guess.append(guess)
+        # Check if the guessed input is more than one letter
+        if len(guess) == 1:
+
+            # checks if the guessed letter is on the choosen word
+            # and puts it in the correct guess index if true
+            if guess in random_word_hard:
+                index = 0
+                for i in random_word_hard:
+                    if i == guess:
+                        correct_guess_hard[index] = guess
+                    index += 1
                 hangman_parts(len(wrong_guess))
                 update_correct_letters_hard()
+            # checks if the guessed letter already is guessed or not
+            # either prints out more of the hangman if the guess is wrong
+            # print out that the user has used that
+            # letter already if the letter is already used
             else:
-                print('You already guessed that')
-            # prints out if the user guessed a wrong letter
-            print(f'Wrong letter {wrong_guess}')
+                if guess not in wrong_guess:
+                    wrong_guess.append(guess)
+                    hangman_parts(len(wrong_guess))
+                    update_correct_letters_hard()
+                else:
+                    print('You already guessed that')
+                # prints out if the user guessed a wrong letter
+                print(f'Wrong letter {wrong_guess}')
+        else:
+            print("Please guess only one letter at a time.")
         # checks if the wrong guesses is more then 5
         # then prints the losing statement
         if len(wrong_guess) > 5:
