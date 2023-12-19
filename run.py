@@ -142,7 +142,7 @@ def easy_difficulty():
             else:
                 print('You already guessed that')
             # prints out if the user guessed a wrong letter
-            print(f'You guessed the wrong letter{wrong_guess}')
+            print(f'Wrong letter {wrong_guess}')
         # checks if the wrong guesses is more then 5
         # then prints the losing statement
         if len(wrong_guess) > 5:
@@ -190,7 +190,7 @@ def medium_difficulty():
             else:
                 print('You already guessed that')
             # prints out if the user guessed a wrong letter
-            print(f'You guessed the wrong letter{wrong_guess}')
+            print(f'Wrong letter {wrong_guess}')
         # checks if the wrong guesses is more then 5
         # then prints the losing statement
         if len(wrong_guess) > 5:
@@ -238,7 +238,7 @@ def hard_difficulty():
             else:
                 print('You already guessed that')
             # prints out if the user guessed a wrong letter
-            print(f'You guessed the wrong letter{wrong_guess}')
+            print(f'Wrong letter {wrong_guess}')
         # checks if the wrong guesses is more then 5
         # then prints the losing statement
         if len(wrong_guess) > 5:
