@@ -103,8 +103,8 @@ def update_correct_letters_medium():
 
 
 def update_correct_letters_hard():
-    for i in correct_guess_hard:
-        print(i, end=' ')
+    for letter in correct_guess_hard:
+        print(letter, end=' ')
     print()
 
 
@@ -216,8 +216,12 @@ def medium_difficulty():
 
 
 def hard_difficulty():
-    # prints out how many letters the choosen word has
+    # prints out how many letters the chosen word has
     print('The word has', len(random_word_hard), 'letters')
+
+    # Initialize variables at the beginning
+    wrong_guess = []
+    correct_guess_hard = ['_'] * len(random_word_hard)
 
     while True:      
         # prints the string below between the guessed letters
@@ -229,7 +233,7 @@ def hard_difficulty():
         # Check if the guessed input is more than one letter
         if len(guess) == 1:
 
-            # checks if the guessed letter is on the choosen word
+            # checks if the guessed letter is on the chosen word
             # and puts it in the correct guess index if true
             if guess in random_word_hard:
                 index = 0
@@ -254,16 +258,24 @@ def hard_difficulty():
                 print(f'Wrong letter {wrong_guess}')
         else:
             print("Please guess only one letter at a time.")
-        # checks if the wrong guesses is more then 5
+        # checks if the wrong guesses are more than 5
         # then prints the losing statement
         if len(wrong_guess) > 5:
             print(f'The correct word was {random_word_hard}')
             print('Game Over. You lose!')
             break
-        # prints the winning statement
         if '_' not in correct_guess_hard:
             print('You won! Congratulations!')
-            break
+            play_again = input("Do you want to play again? (yes/no): ").lower()
+            if play_again == 'yes':
+                # Reset variables for a new game
+                correct_guess_hard = ['_'] * len(random_word_hard)
+                wrong_guess = []
+                # ... (any other variables you need to reset)
+                continue  # Start a new game
+            else:
+                print("Thanks for playing. Goodbye!")
+                break  # Exit the loop
 
 
 # prints out the initial strings when the game starts
