@@ -136,7 +136,7 @@ while True:
         # prints out how many letters the choosen word has
         print('The word has', len(random_word_easy), 'letters')
 
-         # Initialize variables at the beginning
+        # Initialize variables at the beginning
         wrong_guess = []
         correct_guess_easy = ['_'] * len(random_word_easy)
 
@@ -191,7 +191,7 @@ while True:
         # prints out how many letters the choosen word has
         print('The word has', len(random_word_medium), 'letters')
 
-         # Initialize variables at the beginning
+        # Initialize variables at the beginning
         wrong_guess = []
         correct_guess_medium = ['_'] * len(random_word_medium)
 
@@ -291,9 +291,21 @@ while True:
             if len(wrong_guess) > 5:
                 print(f'The correct word was {random_word_hard}')
                 print('Game Over. You lose!')
-            
+                play_again = input("Do you want to play again? (yes/no): ").lower()
+                if play_again == 'yes':
+                    continue  # Start a new game with a new difficulty
+                else:
+                    print("Thanks for playing. Goodbye!")
+                    break  # Exit the main game loop
+
             if '_' not in correct_guess_hard:
                 print('You won! Congratulations!')
+                play_again = input("Do you want to play again? (yes/no): ").lower()
+                if play_again == 'yes':
+                    continue  # Start a new game with a new difficulty
+                else:
+                    print("Thanks for playing. Goodbye!")
+                    break  # Exit the main game loop
 
     # Map difficulty names to their corresponding functions
     difficulty_functions = {
