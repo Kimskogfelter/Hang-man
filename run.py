@@ -279,10 +279,16 @@ def hard_difficulty():
 
 
 # prints out the initial strings when the game starts
-print('Hi and welcome to hangman.')
-print('You got 3 different difficulties to choose from:')
-print('Easy, medium and hard.')
-print('You got 6 tries to guess the correct word.')
+print('Hi and welcome to')
+print('')
+
+print('██╗░░██╗░█████╗░███╗░░██╗░██████╗░███╗░░░███╗░█████╗░███╗░░██╗')
+print('██║░░██║██╔══██╗████╗░██║██╔════╝░████╗░████║██╔══██╗████╗░██║')
+print('███████║███████║██╔██╗██║██║░░██╗░██╔████╔██║███████║██╔██╗██║')
+print('██╔══██║██╔══██║██║╚████║██║░░╚██╗██║╚██╔╝██║██╔══██║██║╚████║')
+print('██║░░██║██║░░██║██║░╚███║╚██████╔╝██║░╚═╝░██║██║░░██║██║░╚███║')
+print('╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝░╚═════╝░╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝')
+print('')
 print('   ',  '------')
 print('   ',  '|    |')
 print('   ',  '|     ')
@@ -290,6 +296,11 @@ print('   ',  '|     ')
 print('   ',  '|     ')
 print('   ',  '|     ')
 print('--------------')
+print('')
+print('You got 3 different difficulties to choose from:')
+print('Easy, medium and hard.')
+print('')
+print('You got 6 tries to guess the correct word.')
 
 # Map difficulty names to their corresponding functions
 difficulty_functions = {
