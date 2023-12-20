@@ -17,9 +17,6 @@ correct_guess_medium = ['_'] * len(random_word_medium)
 correct_guess_hard = ['_'] * len(random_word_hard)
 wrong_guess = []
 
-# function that makes the user wait between choices
-
-
 def waiting_time():
     for i in range(5):
         print('.', end="")
@@ -139,8 +136,9 @@ while True:
         # Initialize variables at the beginning
         wrong_guess = []
         correct_guess_easy = ['_'] * len(random_word_easy)
+        doRunGame = True
 
-        while True:  
+        while doRunGame:  
             # prints the string below between the guessed letters
             print("==========================")
 
@@ -180,11 +178,23 @@ while True:
             if len(wrong_guess) > 5:
                 print(f'The correct word was {random_word_easy}')
                 print('Game Over. You lose!')
-                break
-            # prints the winning statement
+                play_again = input("Do you want to play again? (yes/no): ").lower()
+                if play_again == 'yes':
+                    doRunGame = False
+                    continue  # Start a new game with a new difficulty
+                else:
+                    print("Thanks for playing. Goodbye!")
+                    exit()
+
             if '_' not in correct_guess_easy:
-                print('You won!')
-                break
+                print('You won! Congratulations!')
+                play_again = input("Do you want to play again? (yes/no): ").lower()
+                if play_again == 'yes':
+                    doRunGame = False
+                    continue  # Start a new game with a new difficulty
+                else:
+                    print("Thanks for playing. Goodbye!")
+                    exit()
 
     # main function for MEDIUM difficulty
     def medium_difficulty():
@@ -194,8 +204,9 @@ while True:
         # Initialize variables at the beginning
         wrong_guess = []
         correct_guess_medium = ['_'] * len(random_word_medium)
+        doRunGame = True
 
-        while True:       
+        while doRunGame:       
             # prints the string below between the guessed letters
             print("==========================")
 
@@ -251,7 +262,9 @@ while True:
         wrong_guess = []
         correct_guess_hard = ['_'] * len(random_word_hard)
 
-        while True:     
+        doRunGame = True
+
+        while doRunGame:     
             # prints the string below between the guessed letters
             print("==========================")
 
@@ -293,6 +306,7 @@ while True:
                 print('Game Over. You lose!')
                 play_again = input("Do you want to play again? (yes/no): ").lower()
                 if play_again == 'yes':
+                    doRunGame = False
                     continue  # Start a new game with a new difficulty
                 else:
                     print("Thanks for playing. Goodbye!")
@@ -302,6 +316,7 @@ while True:
                 print('You won! Congratulations!')
                 play_again = input("Do you want to play again? (yes/no): ").lower()
                 if play_again == 'yes':
+                    doRunGame = False
                     continue  # Start a new game with a new difficulty
                 else:
                     print("Thanks for playing. Goodbye!")
@@ -329,9 +344,4 @@ while True:
         else:
             print("Invalid difficulty.")
 
-        play_again = input("Do you want to play again? (yes/no): ").lower()
-        if play_again == 'yes':
-            continue  # Start a new game with a new difficulty
-        else:
-            print("Thanks for playing. Goodbye!")
-            break  # Exit the main game loop
+
