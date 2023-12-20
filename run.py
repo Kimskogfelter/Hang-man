@@ -136,6 +136,10 @@ while True:
         # prints out how many letters the choosen word has
         print('The word has', len(random_word_easy), 'letters')
 
+         # Initialize variables at the beginning
+        wrong_guess = []
+        correct_guess_easy = ['_'] * len(random_word_easy)
+
         while True:  
             # prints the string below between the guessed letters
             print("==========================")
@@ -186,6 +190,10 @@ while True:
     def medium_difficulty():
         # prints out how many letters the choosen word has
         print('The word has', len(random_word_medium), 'letters')
+
+         # Initialize variables at the beginning
+        wrong_guess = []
+        correct_guess_medium = ['_'] * len(random_word_medium)
 
         while True:       
             # prints the string below between the guessed letters
