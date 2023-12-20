@@ -102,7 +102,7 @@ def update_correct_letters_medium():
     print()
 
 
-def update_correct_letters_hard():
+def update_correct_letters_hard(correct_guess_hard):
     for letter in correct_guess_hard:
         print(letter, end=' ')
     print()
@@ -242,7 +242,7 @@ def hard_difficulty():
                         correct_guess_hard[index] = guess
                     index += 1
                 hangman_parts(len(wrong_guess))
-                update_correct_letters_hard()
+                update_correct_letters_hard(correct_guess_hard)
             # checks if the guessed letter already is guessed or not
             # either prints out more of the hangman if the guess is wrong
             # print out that the user has used that
@@ -251,7 +251,7 @@ def hard_difficulty():
                 if guess not in wrong_guess:
                     wrong_guess.append(guess)
                     hangman_parts(len(wrong_guess))
-                    update_correct_letters_hard()
+                    update_correct_letters_hard(correct_guess_hard)
                 else:
                     print('You already guessed that')
                 # prints out if the user guessed a wrong letter
