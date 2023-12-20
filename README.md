@@ -147,22 +147,12 @@ I love games myself so I knew that I wanted to make some kind of game. When I fi
 
 ![picture of the content that pops up when the user wins the game](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/winning-div.webp)
 
-### COLOR SCHEME
-
----
-
-- The color scheme through both pages is a #red background and #white text with a #black border around the text. The buttons to start/pause the game got a grey background color.
-
 ### TECHNOLOGIES
 
 ---
 
-- [https://validator.w3.org/nu/] to validate html code
 - [https://jigsaw.w3.org/css-validator/] to validate css code
-- [https://freepngimg.com/] for images
-- favicon from [https://fontawesome.com/icons/block-question?f=classic&s=duotone&pc=%23dcb218&sc=%23dcb218]
-- used [https://favicon.io/favicon-converter/] to generate the favicon
-- [https://www.remove.bg/] to remove background from favicon
+- [https://fsymbols.com/generators/] to generate the text for the print "hangman", "You won!" and "Game over! You lose"
 
 ### WIREFRAMES
 
