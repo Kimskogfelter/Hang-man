@@ -17,6 +17,7 @@ correct_guess_medium = ['_'] * len(random_word_medium)
 correct_guess_hard = ['_'] * len(random_word_hard)
 wrong_guess = []
 
+
 def waiting_time():
     for i in range(5):
         print('.', end="")
@@ -87,6 +88,8 @@ def hangman_parts(x):
 
 # main game loop
 # prints out the initial strings when the game starts
+
+
 while True:
 
     print('Hi and welcome to')
@@ -206,7 +209,7 @@ while True:
         correct_guess_medium = ['_'] * len(random_word_medium)
         doRunGame = True
 
-        while doRunGame:       
+        while doRunGame:  
             # prints the string below between the guessed letters
             print("==========================")
 
@@ -246,25 +249,36 @@ while True:
             if len(wrong_guess) > 5:
                 print(f'The correct word was {random_word_medium}')
                 print('Game Over. You lose!')
-                break
-            # prints the winning statement
+                play_again = input("Do you want to play again? (yes/no): ").lower()
+                if play_again == 'yes':
+                    doRunGame = False
+                    continue  # Start a new game with a new difficulty
+                else:
+                    print("Thanks for playing. Goodbye!")
+                    exit()
+
             if '_' not in correct_guess_medium:
                 print('You won! Congratulations!')
-                break
+                play_again = input("Do you want to play again? (yes/no): ").lower()
+                if play_again == 'yes':
+                    doRunGame = False
+                    continue  # Start a new game with a new difficulty
+                else:
+                    print("Thanks for playing. Goodbye!")
+                    exit()
 
     # main function for HARD difficulty
 
     def hard_difficulty():
-        # prints out how many letters the chosen word has
+        # prints out how many letters the choosen word has
         print('The word has', len(random_word_hard), 'letters')
 
         # Initialize variables at the beginning
         wrong_guess = []
         correct_guess_hard = ['_'] * len(random_word_hard)
-
         doRunGame = True
 
-        while doRunGame:     
+        while doRunGame:  
             # prints the string below between the guessed letters
             print("==========================")
 
@@ -274,7 +288,7 @@ while True:
             # Check if the guessed input is more than one letter
             if len(guess) == 1:
 
-                # checks if the guessed letter is on the chosen word
+                # checks if the guessed letter is on the choosen word
                 # and puts it in the correct guess index if true
                 if guess in random_word_hard:
                     index = 0
@@ -299,7 +313,7 @@ while True:
                     print(f'Wrong letter {wrong_guess}')
             else:
                 print("Please guess only one letter at a time.")
-            # checks if the wrong guesses are more than 5
+            # checks if the wrong guesses is more then 5
             # then prints the losing statement
             if len(wrong_guess) > 5:
                 print(f'The correct word was {random_word_hard}')
@@ -310,7 +324,7 @@ while True:
                     continue  # Start a new game with a new difficulty
                 else:
                     print("Thanks for playing. Goodbye!")
-                    break  # Exit the main game loop
+                    exit()
 
             if '_' not in correct_guess_hard:
                 print('You won! Congratulations!')
@@ -320,7 +334,7 @@ while True:
                     continue  # Start a new game with a new difficulty
                 else:
                     print("Thanks for playing. Goodbye!")
-                    break  # Exit the main game loop
+                    exit()
 
     # Map difficulty names to their corresponding functions
     difficulty_functions = {
@@ -343,5 +357,3 @@ while True:
             break  # Exit the loop if a valid difficulty is provided
         else:
             print("Invalid difficulty.")
-
-
