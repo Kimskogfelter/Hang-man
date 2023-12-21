@@ -2,9 +2,9 @@ import random
 from time import sleep
 
 # variables that stores words used for the different lists
-words_easy = ['Boo', 'Toad', 'Luigi', 'Kamek', 'Peach', 'Yoshi',]
-words_medium = ['Bowser', 'Shy Guy', 'Bowser Jr']
-words_hard = ['Super Mario', 'Wiggler', 'Donkey Kong', 'Waluigi', 'Rosalina', 'Kammy Koopa',]
+words_easy = ['boo', 'toad', 'luigi', 'kamek', 'peach', 'yoshi', 'mario']
+words_medium = ['bowser',]
+words_hard = ['wiggler', 'waluigi', 'rosalina',]
 
 # variables that randomizes a word from the different lists
 random_word_easy = random.choice(words_easy)
@@ -97,11 +97,11 @@ def lifes(y):
     if y == 2:
         print('♥ ♥ ♥ ♥ ♡ ♡')      
     if y == 3:
-        print('♥ ♥ ♥ ♡ ♡ ♡')       
+        print('♥ ♥ ♥ ♡ ♡ ♡')      
     if y == 4:
-        print('♥ ♥ ♡ ♡ ♡ ♡')     
+        print('♥ ♥ ♡ ♡ ♡ ♡')    
     if y == 5:
-        print('♥ ♡ ♡ ♡ ♡ ♡')      
+        print('♥ ♡ ♡ ♡ ♡ ♡')     
     if y == 6:
         print('♡ ♡ ♡ ♡ ♡ ♡')
 
@@ -193,10 +193,10 @@ while True:
                 # letter already if the letter is already used
                 else:
                     if guess not in wrong_guess:
+                        wrong_guess.append(guess)
                         print('')
                         lifes(len(wrong_guess))
                         print('')
-                        wrong_guess.append(guess)
                         hangman_parts(len(wrong_guess))
                         update_correct_letters_easy(correct_guess_easy)
                     else:
@@ -270,10 +270,10 @@ while True:
                 # letter already if the letter is already used
                 else:
                     if guess not in wrong_guess:
+                        wrong_guess.append(guess)
                         print('')
                         lifes(len(wrong_guess))
                         print('')
-                        wrong_guess.append(guess)
                         hangman_parts(len(wrong_guess))
                         update_correct_letters_medium(correct_guess_medium)
                     else:
@@ -348,10 +348,10 @@ while True:
                 # letter already if the letter is already used
                 else:
                     if guess not in wrong_guess:
+                        wrong_guess.append(guess)
                         print('')
                         lifes(len(wrong_guess))
                         print('')
-                        wrong_guess.append(guess)
                         hangman_parts(len(wrong_guess))
                         update_correct_letters_hard(correct_guess_hard)
                     else:
