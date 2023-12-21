@@ -88,24 +88,18 @@ def hangman_parts(x):
 
 
 def lifes(y):
-     if y == 0:
-        print('♥ ♥ ♥ ♥ ♥ ♥')
-       
+    if y == 0:
+        print('♥ ♥ ♥ ♥ ♥ ♥')           
     if y == 1:
-        print('♥ ♥ ♥ ♥ ♥')
-        
+        print('♥ ♥ ♥ ♥ ♥')       
     if y == 2:
-        print('♥ ♥ ♥ ♥')
-        
+        print('♥ ♥ ♥ ♥')      
     if y == 3:
-        print('♥ ♥ ♥')
-        
+        print('♥ ♥ ♥')       
     if y == 4:
-        print('♥ ♥')
-       
+        print('♥ ♥')     
     if y == 5:
-        print('♥')
-        
+        print('♥')      
     if y == 6:
         print(' ')
 
@@ -133,6 +127,7 @@ while True:
     print('   ',  '|     ')
     print('--------------')
     print('')
+    print('The category is characters from the Nintendo games')
     print('You got 3 different difficulties to choose from:')
     print('Easy, medium and hard.')
     print('')
