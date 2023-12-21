@@ -2,9 +2,9 @@ import random
 from time import sleep
 
 # variables that stores words used for the different lists
-words_easy = ['cat', 'dog', 'bear', 'lion', 'hat',]
-words_medium = ['pizza', 'tiger', 'zebra',]
-words_hard = ['hippopotamus', 'hamburger', 'spaceship', 'kindergarden',]
+words_easy = ['Boo', 'Toad', 'Luigi', 'Kamek', 'Peach', 'Yoshi',]
+words_medium = ['Bowser', 'Shy Guy', 'Bowser Jr']
+words_hard = ['Super Mario', 'Wiggler', 'Donkey Kong', 'Waluigi', 'Rosalina', 'Kammy Koopa',]
 
 # variables that randomizes a word from the different lists
 random_word_easy = random.choice(words_easy)
@@ -129,7 +129,7 @@ while True:
     print('   ',  '|     ')
     print('--------------')
     print('')
-    print('The category is different characters from the Nintendo games')
+    print('The category is different characters from the Super Mario game')
     print('')
     print('You got 3 different difficulties to choose from:')
     print('Easy, medium and hard.')
