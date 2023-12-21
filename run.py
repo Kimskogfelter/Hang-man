@@ -181,7 +181,7 @@ while True:
             if len(wrong_guess) > 5:
                 print(f'The correct word was {random_word_easy}')
                 print('Game Over. You lose!')
-                play_again = input("Do you want to play again? (yes/no): ").lower()
+                play_again = input("Do you want to play again? (yes/no): ")
                 if play_again == 'yes':
                     doRunGame = False
                     continue  # Start a new game with a new difficulty
@@ -191,7 +191,7 @@ while True:
 
             if '_' not in correct_guess_easy:
                 print('You won! Congratulations!')
-                play_again = input("Do you want to play again? (yes/no): ").lower()
+                play_again = input("Do you want to play again? (yes/no): ")
                 if play_again == 'yes':
                     doRunGame = False
                     continue  # Start a new game with a new difficulty
@@ -249,7 +249,7 @@ while True:
             if len(wrong_guess) > 5:
                 print(f'The correct word was {random_word_medium}')
                 print('Game Over. You lose!')
-                play_again = input("Do you want to play again? (yes/no): ").lower()
+                play_again = input("Do you want to play again? (yes/no): ")
                 if play_again == 'yes':
                     doRunGame = False
                     continue  # Start a new game with a new difficulty
@@ -259,7 +259,7 @@ while True:
 
             if '_' not in correct_guess_medium:
                 print('You won! Congratulations!')
-                play_again = input("Do you want to play again? (yes/no): ").lower()
+                play_again = input("Do you want to play again? (yes/no): ")
                 if play_again == 'yes':
                     doRunGame = False
                     continue  # Start a new game with a new difficulty
@@ -318,7 +318,7 @@ while True:
             if len(wrong_guess) > 5:
                 print(f'The correct word was {random_word_hard}')
                 print('Game Over. You lose!')
-                play_again = input("Do you want to play again? (yes/no): ").lower()
+                play_again = input("Do you want to play again? (yes/no): ")
                 if play_again == 'yes':
                     doRunGame = False
                     continue  # Start a new game with a new difficulty
@@ -328,7 +328,7 @@ while True:
 
             if '_' not in correct_guess_hard:
                 print('You won! Congratulations!')
-                play_again = input("Do you want to play again? (yes/no): ").lower()
+                play_again = input("Do you want to play again? (yes/no): ")
                 if play_again == 'yes':
                     doRunGame = False
                     continue  # Start a new game with a new difficulty
@@ -346,7 +346,7 @@ while True:
     # Check if the entered difficulty is valid
     while True:
         difficulty = input("Please choose a degree of difficulty "
-                            "('easy', 'medium', or 'hard'): ")
+                           "('easy', 'medium', or 'hard'): ")
 
         chosen_difficulty_function = difficulty_functions.get(difficulty)
 
