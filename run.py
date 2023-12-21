@@ -110,7 +110,7 @@ def lifes(y):
 
 
 while True:
-
+    print('')
     print('Hi and welcome to')
     print('')
 
@@ -120,6 +120,26 @@ while True:
     print('██╔══██║██╔══██║██║╚████║██║░░╚██╗██║╚██╔╝██║██╔══██║██║╚████║')
     print('██║░░██║██║░░██║██║░╚███║╚██████╔╝██║░╚═╝░██║██║░░██║██║░╚███║')
     print('╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝░╚═════╝░╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝')
+    print('')
+    print('░██████╗██╗░░░██╗██████╗░███████╗██████╗░'
+          '███╗░░░███╗░█████╗░██████╗░██╗░█████╗░')
+    print('██╔════╝██║░░░██║██╔══██╗██╔════╝██╔══██╗'
+          '████╗░████║██╔══██╗██╔══██╗██║██╔══██╗')
+    print('╚█████╗░██║░░░██║██████╔╝█████╗░░██████╔╝'
+          '██╔████╔██║███████║██████╔╝██║██║░░██║')
+    print('░╚═══██╗██║░░░██║██╔═══╝░██╔══╝░░██╔══██╗'
+          '██║╚██╔╝██║██╔══██║██╔══██╗██║██║░░██║')
+    print('██████╔╝╚██████╔╝██║░░░░░███████╗██║░░██║'
+          '██║░╚═╝░██║██║░░██║██║░░██║██║╚█████╔╝')
+    print('╚═════╝░░╚═════╝░╚═╝░░░░░╚══════╝╚═╝░░╚═╝'
+          '╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░╚════╝░')
+    print('')
+    print('███████╗██████╗░██╗████████╗██╗░█████╗░███╗░░██╗')
+    print('██╔════╝██╔══██╗██║╚══██╔══╝██║██╔══██╗████╗░██║')
+    print('█████╗░░██║░░██║██║░░░██║░░░██║██║░░██║██╔██╗██║')
+    print('██╔══╝░░██║░░██║██║░░░██║░░░██║██║░░██║██║╚████║')
+    print('███████╗██████╔╝██║░░░██║░░░██║╚█████╔╝██║░╚███║')
+    print('╚══════╝╚═════╝░╚═╝░░░╚═╝░░░╚═╝░╚════╝░╚═╝░░╚══╝')
     print('')
     print('   ',  '------')
     print('   ',  '|    |')
@@ -133,6 +153,7 @@ while True:
     print('')
     print('You got 3 different difficulties to choose from:')
     print('Easy, medium and hard.')
+    print('')
     print('The easy difficulty got up til 5 letters.')
     print('The medium difficulty got up til 7 letters.')
     print('And the hard difficulty got up til 9 letters.')
@@ -180,12 +201,13 @@ while True:
                 # checks if the guessed letter is on the choosen word
                 # and puts it in the correct guess index if true
                 if guess in random_word_easy:
+                    # prints out the lifes
+                    print('')
+                    lifes(len(wrong_guess))
+                    print('')
                     index = 0
                     for i in random_word_easy:
                         if i == guess:
-                            print('')
-                            lifes(len(wrong_guess))
-                            print('')
                             correct_guess_easy[index] = guess
                         index += 1
                     hangman_parts(len(wrong_guess))
@@ -213,7 +235,13 @@ while True:
             # then prints the losing statement
             if len(wrong_guess) > 5:
                 print(f'The correct word was {random_word_easy}')
-                print('Game Over. You lose!')
+                print()
+                print('█▄█ █▀█ █░█  █░░ █▀█ █▀ █▀▀ █') 
+                print('░█░ █▄█ █▄█  █▄▄ █▄█ ▄█ ██▄ ▄') 
+                print('')
+                print('█▀▀ ▄▀█ █▀▄▀█ █▀▀  █▀█ █░█ █▀▀ █▀█ ░')
+                print('█▄█ █▀█ █░▀░█ ██▄  █▄█ ▀▄▀ ██▄ █▀▄ ▄')
+                print('')
                 play_again = input("Do you want to play again? (yes/no): ")
                 if play_again == 'yes':
                     doRunGame = False
@@ -223,7 +251,16 @@ while True:
                     exit()
 
             if '_' not in correct_guess_easy:
-                print('You won! Congratulations!')
+                print('')
+                print('█▄█ █▀█ █░█  █░█░█ █▀█ █▄░█ █')
+                print('░█░ █▄█ █▄█  ▀▄▀▄▀ █▄█ █░▀█ ▄')
+                print('')
+
+                print('█▀▀ █▀█ █▄░█ █▀▀ █▀█ ▄▀█ ▀█▀ █░█'
+                      '█░░ ▄▀█ ▀█▀ █ █▀█ █▄░█ █▀')
+                print('█▄▄ █▄█ █░▀█ █▄█ █▀▄ █▀█ ░█░ █▄█'
+                      '█▄▄ █▀█ ░█░ █ █▄█ █░▀█ ▄█')
+                print('')
                 play_again = input("Do you want to play again? (yes/no): ")
                 if play_again == 'yes':
                     doRunGame = False
