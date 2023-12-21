@@ -86,6 +86,29 @@ def hangman_parts(x):
         print('   ',  '|   / \\')
         print('---------------')
 
+
+def lifes(y):
+     if y == 0:
+        print('♥ ♥ ♥ ♥ ♥ ♥')
+       
+    if y == 1:
+        print('♥ ♥ ♥ ♥ ♥')
+        
+    if y == 2:
+        print('♥ ♥ ♥ ♥')
+        
+    if y == 3:
+        print('♥ ♥ ♥')
+        
+    if y == 4:
+        print('♥ ♥')
+       
+    if y == 5:
+        print('♥')
+        
+    if y == 6:
+        print(' ')
+
 # main game loop
 # prints out the initial strings when the game starts
 
