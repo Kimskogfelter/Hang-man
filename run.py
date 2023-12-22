@@ -14,9 +14,8 @@ random_word_medium = random.choice(words_medium)
 random_word_hard = random.choice(words_hard)
 
 # variables that will store the correct and wrong guesses
-correct_guess_easy = ['_'] * len(random_word_easy)
-correct_guess_medium = ['_'] * len(random_word_medium)
-correct_guess_hard = ['_'] * len(random_word_hard)
+correct_guess = ['_'] * len(random_word_easy, random_word_medium, \ 
+                            random_word_hard)
 wrong_guess = []
 
 
@@ -163,35 +162,27 @@ while True:
     print('You got 6 tries to guess the correct word.')
 
     # functions that shows how many letters the choosen word have
-    def update_correct_letters_easy(correct_guess_easy):
-        for letter in correct_guess_easy:
+    def update_correct_letters(correct_guess):
+        for letter in correct_guess:
             print(letter, end=' ')
         print()
 
-    def update_correct_letters_medium(correct_guess_medium):
-        for letter in correct_guess_medium:
-            print(letter, end=' ')
-        print()
-
-    def update_correct_letters_hard(correct_guess_hard):
-        for letter in correct_guess_hard:
-            print(letter, end=' ')
-        print()
-
-    # main function for EASY difficulty
-    def easy_difficulty():
+    # function that starts the hangman game
+    def play_game(random_word_easy, random_word_medium, random_word_hard):
         # prints out how many letters the choosen word has
-        print('The word has', len(random_word_easy), 'letters')
+        print('The word has', len(random_word_easy, random_word_medium, \ 
+                                  random_word_hard), 'letters')
         print('')
 
         # Initialize variables at the beginning
         wrong_guess = []
-        correct_guess_easy = ['_'] * len(random_word_easy)
+        correct_guess = ['_'] * len(random_word_easy, random_word_medium, \
+                                    random_word_hard)
         doRunGame = True
 
         while doRunGame:  
             # prints the string below between the guessed letters
-            print("==========================")
+            print("=================================")
 
             # variable for the guess the user will choose
             print('')
@@ -202,18 +193,19 @@ while True:
 
                 # checks if the guessed letter is on the choosen word
                 # and puts it in the correct guess index if true
-                if guess in random_word_easy:
+                if guess in random_word_easy, random_word_medium, \ 
+                            random_word_hard:
                     # prints out the lifes
                     print('')
                     lifes(len(wrong_guess))
                     print('')
                     index = 0
-                    for i in random_word_easy:
+                    for i in random_word_easy, random_word_medium, random_word_hard:
                         if i == guess:
-                            correct_guess_easy[index] = guess
+                            correct_guess[index] = guess
                         index += 1
                     hangman_parts(len(wrong_guess))
-                    update_correct_letters_easy(correct_guess_easy)
+                    update_correct_letters(correct_guess)
                 # checks if the guessed letter already is guessed or not
                 # either prints out more of the hangman if the guess is wrong
                 # print out that the user has used that
@@ -225,7 +217,7 @@ while True:
                         lifes(len(wrong_guess))
                         print('')
                         hangman_parts(len(wrong_guess))
-                        update_correct_letters_easy(correct_guess_easy)
+                        update_correct_letters(correct_guess)
                     else:
                         print('You already guessed that')
                     # prints out if the user guessed a wrong letter
@@ -236,7 +228,8 @@ while True:
             # checks if the wrong guesses is more then 5
             # then prints the losing statement
             if len(wrong_guess) > 5:
-                print(f'The correct word was {random_word_easy}')
+                print(f'The correct word was {random_word_easy,
+                      random_word_medium, random_word_hard}')
                 print()
                 print('█▄█ █▀█ █░█  █░░ █▀█ █▀ █▀▀ █') 
                 print('░█░ █▄█ █▄█  █▄▄ █▄█ ▄█ ██▄ ▄') 
@@ -252,7 +245,7 @@ while True:
                     print("Thanks for playing. Goodbye!")
                     exit()
 
-            if '_' not in correct_guess_easy:
+            if '_' not in correct_guess:
                 print('')
                 print('█▄█ █▀█ █░█  █░█░█ █▀█ █▄░█ █')
                 print('░█░ █▄█ █▄█  ▀▄▀▄▀ █▄█ █░▀█ ▄')
@@ -271,180 +264,24 @@ while True:
                     print("Thanks for playing. Goodbye!")
                     exit()
 
-    # main function for MEDIUM difficulty
-    def medium_difficulty():
-        # prints out how many letters the choosen word has
-        print('The word has', len(random_word_medium), 'letters')
+# Main game loop
+# Check if the entered difficulty is valid
+while True:
+    difficulty = input("Please choose a degree of difficulty "
+                       "('easy', 'medium', or 'hard'): ")
+
+    if difficulty in ('easy', 'medium', 'hard'):
         print('')
+        print(f'Let me think of a {difficulty} word...')
+        waiting_time()
 
-        # Initialize variables at the beginning
-        wrong_guess = []
-        correct_guess_medium = ['_'] * len(random_word_medium)
-        doRunGame = True
-
-        while doRunGame:  
-            # prints the string below between the guessed letters
-            print("==========================")
-
-            # variable for the guess the user will choose
-            print('')
-            guess = input("Guess a letter: ")
-
-            # Check if the guessed input is more than one letter
-            if len(guess) == 1:
-
-                # checks if the guessed letter is on the choosen word
-                # and puts it in the correct guess index if true
-                if guess in random_word_medium:
-                    index = 0
-                    for i in random_word_medium:
-                        if i == guess:
-                            print('')
-                            lifes(len(wrong_guess))
-                            print('')
-                            correct_guess_medium[index] = guess
-                        index += 1
-                    hangman_parts(len(wrong_guess))
-                    update_correct_letters_medium(correct_guess_medium)
-                # checks if the guessed letter already is guessed or not
-                # either prints out more of the hangman if the guess is wrong
-                # print out that the user has used that
-                # letter already if the letter is already used
-                else:
-                    if guess not in wrong_guess:
-                        wrong_guess.append(guess)
-                        print('')
-                        lifes(len(wrong_guess))
-                        print('')
-                        hangman_parts(len(wrong_guess))
-                        update_correct_letters_medium(correct_guess_medium)
-                    else:
-                        print('You already guessed that')
-                    # prints out if the user guessed a wrong letter
-                    print('')
-                    print(f'Wrong letter {wrong_guess}')
-            else:
-                print("Please guess only one letter at a time.")
-            # checks if the wrong guesses is more then 5
-            # then prints the losing statement
-            if len(wrong_guess) > 5:
-                print(f'The correct word was {random_word_medium}')
-                print('Game Over. You lose!')
-                play_again = input("Do you want to play again? (yes/no): ")
-                if play_again == 'yes':
-                    doRunGame = False
-                    continue  # Start a new game with a new difficulty
-                else:
-                    print("Thanks for playing. Goodbye!")
-                    exit()
-
-            if '_' not in correct_guess_medium:
-                print('You won! Congratulations!')
-                play_again = input("Do you want to play again? (yes/no): ")
-                if play_again == 'yes':
-                    doRunGame = False
-                    continue  # Start a new game with a new difficulty
-                else:
-                    print("Thanks for playing. Goodbye!")
-                    exit()
-
-    # main function for HARD difficulty
-
-    def hard_difficulty():
-        # prints out how many letters the choosen word has
-        print('The word has', len(random_word_hard), 'letters')
-        print('')
-
-        # Initialize variables at the beginning
-        wrong_guess = []
-        correct_guess_hard = ['_'] * len(random_word_hard)
-        doRunGame = True
-
-        while doRunGame:  
-            # prints the string below between the guessed letters
-            print("==========================")
-
-            # variable for the guess the user will choose
-            print('')
-            guess = input("Guess a letter: ")
-
-            # Check if the guessed input is more than one letter
-            if len(guess) == 1:
-
-                # checks if the guessed letter is on the choosen word
-                # and puts it in the correct guess index if true
-                if guess in random_word_hard:
-                    index = 0
-                    for i in random_word_hard:
-                        if i == guess:
-                            print('')
-                            lifes(len(wrong_guess))
-                            print('')
-                            correct_guess_hard[index] = guess
-                        index += 1
-                    hangman_parts(len(wrong_guess))
-                    update_correct_letters_hard(correct_guess_hard)
-                # checks if the guessed letter already is guessed or not
-                # either prints out more of the hangman if the guess is wrong
-                # print out that the user has used that
-                # letter already if the letter is already used
-                else:
-                    if guess not in wrong_guess:
-                        wrong_guess.append(guess)
-                        print('')
-                        lifes(len(wrong_guess))
-                        print('')
-                        hangman_parts(len(wrong_guess))
-                        update_correct_letters_hard(correct_guess_hard)
-                    else:
-                        print('You already guessed that')
-                    # prints out if the user guessed a wrong letter
-                    print('')
-                    print(f'Wrong letter {wrong_guess}')
-            else:
-                print("Please guess only one letter at a time.")
-            # checks if the wrong guesses is more then 5
-            # then prints the losing statement
-            if len(wrong_guess) > 5:
-                print(f'The correct word was {random_word_hard}')
-                print('Game Over. You lose!')
-                play_again = input("Do you want to play again? (yes/no): ")
-                if play_again == 'yes':
-                    doRunGame = False
-                    continue  # Start a new game with a new difficulty
-                else:
-                    print("Thanks for playing. Goodbye!")
-                    exit()
-
-            if '_' not in correct_guess_hard:
-                print('You won! Congratulations!')
-                play_again = input("Do you want to play again? (yes/no): ")
-                if play_again == 'yes':
-                    doRunGame = False
-                    continue  # Start a new game with a new difficulty
-                else:
-                    print("Thanks for playing. Goodbye!")
-                    exit()
-
-    # Map difficulty names to their corresponding functions
-    difficulty_functions = {
-        'easy': easy_difficulty,
-        'medium': medium_difficulty,
-        'hard': hard_difficulty
-    }
-
-    # Check if the entered difficulty is valid
-    while True:
-        difficulty = input("Please choose a degree of difficulty "
-                           "('easy', 'medium', or 'hard'): ")
-
-        chosen_difficulty_function = difficulty_functions.get(difficulty)
-
-        if chosen_difficulty_function:
-            print('')
-            print(f'Let me think of a {difficulty} word...')
-            waiting_time()
-            chosen_difficulty_function()  # Call the chosen difficulty function
-            break  # Exit the loop if a valid difficulty is provided
-        else:
-            print("Invalid difficulty.")
+        if difficulty == 'easy':
+            play_game(random_word_easy)
+        elif difficulty == 'medium':
+            play_game(random_word_medium)
+        elif difficulty == 'hard':
+            play_game(random_word_hard)
+       
+        break  # Exit the loop if a valid difficulty is provided
+    else:
+        print("Invalid difficulty.")
