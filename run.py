@@ -18,6 +18,8 @@ correct_guess = ['_'] * len(random_word_easy or random_word_medium
                             or random_word_hard)
 wrong_guess = []
 
+# function that adds waiting time
+
 
 def waiting_time():
     for i in range(5):
@@ -89,6 +91,7 @@ def hangman_parts(x):
 
 
 # function to show how many tries the user got
+# left before the game is over
 
 def lifes(y):
     if y == 0:
@@ -106,7 +109,6 @@ def lifes(y):
     if y == 6:
         print('♡ ♡ ♡ ♡ ♡ ♡')
 
-# main game loop
 # prints out the initial strings when the game starts
 
 
@@ -261,25 +263,35 @@ while True:
                 else:
                     print("Thanks for playing. Goodbye!")
                     exit()
-
+                   
+    # main game loop
     # Check if the entered difficulty is valid
     while True:
 
         difficulty = input("Please choose a degree of difficulty ('easy',"
                            "'medium', or 'hard'): ")
         if difficulty == 'easy':
+            # variable that randomizes a word from the easy list
+            random_word_easy = random.choice(words_easy)
+            # variable that adds the randomized word to the random_word var
             random_word = random_word_easy
             print('')
             print(f'Let me think of a {difficulty} word...')
             waiting_time()
             play_game(random_word)
         elif difficulty == 'medium':
+            # variable that randomizes a word from the medium list
+            random_word_medium = random.choice(words_medium)
+            # variable that adds the randomized word to the random_word var
             random_word = random_word_medium
             print('')
             print(f'Let me think of a {difficulty} word...')
             waiting_time()
             play_game(random_word)
         elif difficulty == 'hard':
+            # variable that randomizes a word from the hard list
+            random_word_hard = random.choice(words_hard)
+            # variable that adds the randomized word to the random_word var
             random_word = random_word_hard
             print('')
             print(f'Let me think of a {difficulty} word...')
