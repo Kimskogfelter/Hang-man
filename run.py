@@ -2,9 +2,11 @@ import random
 from time import sleep
 
 # variables that stores words used for the different lists
-words_easy = ['boo', 'toad', 'luigi', 'kamek', 'peach', 'yoshi', 'mario']
-words_medium = ['bowser', 'wiggler', 'waluigi',]
-words_hard = ['rosalina',]
+words_easy = ['boo', 'toad', 'luna', 'bow',]
+words_medium = ['lakitu', 'luigi', 'kamek', 'peach', 'yoshi', 'mario',
+                'bowser', 'goomba']
+words_hard = ['rosalina', 'polterpup', 'wiggler', 'waluigi',
+              'blooper',]
 
 # variables that randomizes a word from the different lists
 random_word_easy = random.choice(words_easy)
@@ -149,13 +151,13 @@ while True:
     print('   ',  '|     ')
     print('--------------')
     print('')
-    print('The category is different characters from the Super Mario game.')
+    print('The category is different characters from the Super Mario games.')
     print('')
     print('You got 3 different difficulties to choose from:')
     print('Easy, medium and hard.')
     print('')
-    print('The easy difficulty got up til 5 letters.')
-    print('The medium difficulty got up til 7 letters.')
+    print('The easy difficulty got up til 4 letters.')
+    print('The medium difficulty got up til 6 letters.')
     print('And the hard difficulty got up til 9 letters.')
     print('')
     print('You got 6 tries to guess the correct word.')
