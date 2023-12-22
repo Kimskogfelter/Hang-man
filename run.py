@@ -3,8 +3,8 @@ from time import sleep
 
 # variables that stores words used for the different lists
 words_easy = ['boo', 'toad', 'luna', 'bow',]
-words_medium = ['lakitu', 'luigi', 'kamek', 'peach', 'yoshi', 'mario',
-                'bowser', 'goomba']
+words_medium = ['luigi', 'kamek', 'peach', 'yoshi', 'mario', 'bowser',
+                'goomba', 'lakitu',]
 words_hard = ['rosalina', 'polterpup', 'wiggler', 'waluigi',
               'blooper',]
 
@@ -237,13 +237,16 @@ while True:
                 print('█▀▀ ▄▀█ █▀▄▀█ █▀▀  █▀█ █░█ █▀▀ █▀█ ░')
                 print('█▄█ █▀█ █░▀░█ ██▄  █▄█ ▀▄▀ ██▄ █▀▄ ▄')
                 print('')
-                play_again = input("Do you want to play again? (yes/no): ")
-                if play_again == 'yes':
-                    doRunGame = False
-                    continue  # Start a new game with a new difficulty
-                else:
-                    print("Thanks for playing. Goodbye!")
-                    exit()
+                while True:
+                    play_again = input("Do you want to play again? (yes/no): ")
+                    if play_again == 'yes':
+                        doRunGame = False
+                        break  # Start a new game with a new difficulty
+                    elif play_again == 'no':
+                        print("Thanks for playing. Goodbye!")
+                        exit()
+                    else:
+                        print("Invalid answer.")
 
             if '_' not in correct_guess:
                 print('')
@@ -256,14 +259,16 @@ while True:
                 print('█▄▄ █▄█ █░▀█ █▄█ █▀▄ █▀█ ░█░ █▄█'
                       '█▄▄ █▀█ ░█░ █ █▄█ █░▀█ ▄█')
                 print('')
-                play_again = input("Do you want to play again? (yes/no): ")
-                if play_again == 'yes':
-                    doRunGame = False
-                    continue  # Start a new game with a new difficulty
-                else:
-                    print("Thanks for playing. Goodbye!")
-                    exit()
-                   
+                while True:
+                    play_again = input("Do you want to play again? (yes/no): ")
+                    if play_again == 'yes':
+                        doRunGame = False
+                        break  # Start a new game with a new difficulty
+                    elif play_again == 'no':
+                        print("Thanks for playing. Goodbye!")
+                        exit()
+                    else:
+                        print("Invalid answer.")     
     # main game loop
     # Check if the entered difficulty is valid
     while True:
