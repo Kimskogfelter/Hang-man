@@ -14,8 +14,8 @@ random_word_medium = random.choice(words_medium)
 random_word_hard = random.choice(words_hard)
 
 # variables that will store the correct and wrong guesses
-correct_guess = ['_'] * len(random_word_easy, random_word_medium, \ 
-                            random_word_hard)
+correct_guess = ['_'] * len(random_word_easy or random_word_medium
+                            or random_word_hard)
 wrong_guess = []
 
 
@@ -92,17 +92,17 @@ def hangman_parts(x):
 
 def lifes(y):
     if y == 0:
-        print('♥ ♥ ♥ ♥ ♥ ♥')          
+        print('♥ ♥ ♥ ♥ ♥ ♥')         
     if y == 1:
-        print('♥ ♥ ♥ ♥ ♥ ♡')      
+        print('♥ ♥ ♥ ♥ ♥ ♡')     
     if y == 2:
-        print('♥ ♥ ♥ ♥ ♡ ♡')      
+        print('♥ ♥ ♥ ♥ ♡ ♡')     
     if y == 3:
-        print('♥ ♥ ♥ ♡ ♡ ♡')      
+        print('♥ ♥ ♥ ♡ ♡ ♡')     
     if y == 4:
-        print('♥ ♥ ♡ ♡ ♡ ♡')    
+        print('♥ ♥ ♡ ♡ ♡ ♡')  
     if y == 5:
-        print('♥ ♡ ♡ ♡ ♡ ♡')     
+        print('♥ ♡ ♡ ♡ ♡ ♡')   
     if y == 6:
         print('♡ ♡ ♡ ♡ ♡ ♡')
 
@@ -168,19 +168,17 @@ while True:
         print()
 
     # function that starts the hangman game
-    def play_game(random_word_easy, random_word_medium, random_word_hard):
+    def play_game(random_word):
         # prints out how many letters the choosen word has
-        print('The word has', len(random_word_easy, random_word_medium, \ 
-                                  random_word_hard), 'letters')
+        print('The word has', len(random_word), 'letters')
         print('')
 
         # Initialize variables at the beginning
         wrong_guess = []
-        correct_guess = ['_'] * len(random_word_easy, random_word_medium, \
-                                    random_word_hard)
+        correct_guess = ['_'] * len(random_word)
         doRunGame = True
 
-        while doRunGame:  
+        while doRunGame:
             # prints the string below between the guessed letters
             print("=================================")
 
@@ -193,14 +191,15 @@ while True:
 
                 # checks if the guessed letter is on the choosen word
                 # and puts it in the correct guess index if true
-                if guess in random_word_easy, random_word_medium, \ 
-                            random_word_hard:
+                if guess in correct_guess:
+                    print('You already guessed that')
+                elif guess in random_word:
                     # prints out the lifes
                     print('')
                     lifes(len(wrong_guess))
                     print('')
                     index = 0
-                    for i in random_word_easy, random_word_medium, random_word_hard:
+                    for i in random_word:
                         if i == guess:
                             correct_guess[index] = guess
                         index += 1
@@ -211,15 +210,15 @@ while True:
                 # print out that the user has used that
                 # letter already if the letter is already used
                 else:
-                    if guess not in wrong_guess:
+                    if guess in wrong_guess:
+                        print('You already guessed that')
+                    elif guess not in wrong_guess:
                         wrong_guess.append(guess)
                         print('')
                         lifes(len(wrong_guess))
                         print('')
                         hangman_parts(len(wrong_guess))
                         update_correct_letters(correct_guess)
-                    else:
-                        print('You already guessed that')
                     # prints out if the user guessed a wrong letter
                     print('')
                     print(f'Wrong letter {wrong_guess}')
@@ -228,11 +227,10 @@ while True:
             # checks if the wrong guesses is more then 5
             # then prints the losing statement
             if len(wrong_guess) > 5:
-                print(f'The correct word was {random_word_easy,
-                      random_word_medium, random_word_hard}')
+                print(f'The correct word was {random_word}')
                 print()
-                print('█▄█ █▀█ █░█  █░░ █▀█ █▀ █▀▀ █') 
-                print('░█░ █▄█ █▄█  █▄▄ █▄█ ▄█ ██▄ ▄') 
+                print('█▄█ █▀█ █░█  █░░ █▀█ █▀ █▀▀ █')
+                print('░█░ █▄█ █▄█  █▄▄ █▄█ ▄█ ██▄ ▄')
                 print('')
                 print('█▀▀ ▄▀█ █▀▄▀█ █▀▀  █▀█ █░█ █▀▀ █▀█ ░')
                 print('█▄█ █▀█ █░▀░█ ██▄  █▄█ ▀▄▀ ██▄ █▀▄ ▄')
@@ -264,24 +262,28 @@ while True:
                     print("Thanks for playing. Goodbye!")
                     exit()
 
-# Main game loop
-# Check if the entered difficulty is valid
-while True:
-    difficulty = input("Please choose a degree of difficulty "
-                       "('easy', 'medium', or 'hard'): ")
+    # Check if the entered difficulty is valid
+    while True:
 
-    if difficulty in ('easy', 'medium', 'hard'):
-        print('')
-        print(f'Let me think of a {difficulty} word...')
-        waiting_time()
-
+        difficulty = input("Please choose a degree of difficulty ('easy',"
+                           "'medium', or 'hard'): ")
         if difficulty == 'easy':
-            play_game(random_word_easy)
+            random_word = random_word_easy
+            print('')
+            print(f'Let me think of a {difficulty} word...')
+            waiting_time()
+            play_game(random_word)
         elif difficulty == 'medium':
-            play_game(random_word_medium)
+            random_word = random_word_medium
+            print('')
+            print(f'Let me think of a {difficulty} word...')
+            waiting_time()
+            play_game(random_word)
         elif difficulty == 'hard':
-            play_game(random_word_hard)
-       
-        break  # Exit the loop if a valid difficulty is provided
-    else:
-        print("Invalid difficulty.")
+            random_word = random_word_hard
+            print('')
+            print(f'Let me think of a {difficulty} word...')
+            waiting_time()
+            play_game(random_word)
+        else:
+            print("Invalid difficulty.")
