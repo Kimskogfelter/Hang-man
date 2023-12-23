@@ -146,7 +146,7 @@ I still havent found what makes this bug appear.
 ### DEPLOYMENT
 
 ---
-    This project was deployed via Github to Heroku. Make sure that you have added your dependencies to the requirements.txt file before you do this or it might not work. The following steps shows how you deploy it to Heroku:
+#### This project was deployed via Github to Heroku. Make sure that you have added your dependencies to the requirements.txt file before you do this or it might not work. The following steps shows how you deploy it to Heroku:
 
 1. Log in to your Github and deploy your repository.
 2. Make a account on the Heroku website if you dont got one already [https://id.heroku.com/login]
