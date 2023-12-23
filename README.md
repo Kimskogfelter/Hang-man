@@ -42,72 +42,59 @@ Happy coding!
 ---
 
 When I searched online for inspiration on what to make for my third project I wanted it to be something that most people recognize and understand. 
-I love games myself so I knew that I wanted to make some kind of game. When I finally saw that you could make hangman with python I knew that this was the game I wanted to make. I loved to play hangman as a kid during breaks on the whiteboard in the classroom. My hangman has 3 different degrees of difficulty, easy, medium and hard. The player then get 6 lives/attemps to try and guess the correct word that the computer randomizes from lists that I have made.  
-
-### UX DESIGN
+I love games myself so I knew that I wanted to make some kind of game. When I finally saw that you could make hangman with python I knew that this was the game I wanted to make. I loved to play hangman as a kid during breaks on the whiteboard in the classroom. 
 
 ---
 
-#### USER STORIES
+### HOW TO PLAY
 
-- #### As a first time user
-
-  - I want to be intriged to play the game
-  - I want to feel amused by the game
-  - I want to feel exited when playing the game
-  - I want a break from everything else around me and get a quick brain workout
-  
-- #### As a returning and frequent user
-
-  - I want to get a break and get a quick brain workout
-  
-#### All users are enabled to play both on the computer and on their mobile phones
-
-### STRUCTURE
-
----
-
-#### STARTING PAGE
-
-- The first page a user enters is the starting page. It has the heading text "Super Mario Memory Game" and a picture of Mario riding on Yoshis back with a little star friend next to them.
-
-![picture of the starting page](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/start-page.webp)
-
-#### GAME AREA PAGE
-
-- The game area contains the memory game. It got 12 different cards that the user can click on and pair them in order to continue and win the game.
-
-![picture of the game area page](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/game-page.webp)
-
-#### WINNING PAGE
-
-- When the user wins the game a window pops up that says congratulations. The user can then choose to click on a "play again" button to play again.
-
-![picture of the winning page](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/win-result-page.webp)
+My hangman has 3 different degrees of difficulty, easy, medium and hard. The player then get 6 lives/attemps to try and guess the correct word that the computer randomizes from lists that I have made.  
+The choosen word are shown with "_" for each letter. The game also tells the user how many letter the word has in the beginning after the difficulty level is selected.
+The lifes are shown as hearts above the hangman picture. So the player easy can see how many tries he/she got left before the game ends. The player wins the gamer if he/she can guess the correct word without losing all the lifes. The players lose if all lifes are lost. When the game is over the player can choose if they want to plat again or not. If they choose to play again the game restart from where the player can choose the difficulty level. If they choose not to play again the game ends. 
 
 ### FEATURES
 
 ---
 
-#### STARTING PAGE
+#### DIFFICULTY LEVELS
 
-- #### HEADING
+- #### The game got 3 different difficulties that the user can choose from in the beginning of the game. Easy, medium and hard. The easy difficulty got up to 4 letters in the choosen word, the medium got up to 6 letters and the hard got up to 9 letters. 
 
-  - The heading text is at the top of the website and contains the text "Super Mario - Memory Game". Its purpose is to make the user understand what type of game it is that they are going to play.
+![picture of the part where the user choose the difficulty level](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/heading.webp)
 
-![picture of the heading on the starting page](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/heading.webp)
+#### SHOWING LIFES
 
-- #### IMAGE
-  
-  - The image of Super Mario on Yoshi is under the heading to make the user understand that the game is about Super Mario
+- #### The player got 6 tries to guess the correct word. That is shown as hearts above the picture of the hangman so the player easy can see how many tries he/she got left before they lose. 
 
-![picture of the image with Super Mario and Yoshi on the starting page](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/image-startpage.webp)
+![picture of the hearts that shows how many lifes the player got left](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/image-startpage.webp)
 
-- #### "LETS GO" BUTTON
-  
-  - Under Super Mario and Yoshi is a button that says "Lets go!". If the user click on the button it takes them to the game page.
+#### INPUT VALIDATION
 
-![picture of the "lets go" button on the starting page](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/letsgo-button.webp)
+- #### CHOOSEN DIFFICULTY INPUT
+    - Here the game checks if the choosen difficulty level is correct. If the player has written something else then easy, medium or hard they get a message that tells them that its invalid and they need to choose either easy, medium or hard.
+
+![picture of the message that comes when the player write something else then easy, medium or hard when choosing a difficulty](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/letsgo-button.webp)
+
+- #### GUESS A LETTER INPUT
+    - When the player is going to guess a letter the game checks for several things. The first thing it checks if its the player only guessed one letter. If he/she guessed more then one letter the game shows a message that they need to guess at one letter at a time. 
+
+![picture of the message that comes when the player guess more then one letter](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/letsgo-button.webp)
+
+    - The second thing the game checks is if the letter is correct or not. If the letter is correct it gets printed out so the player can see where the correct letter is in the choosen word.
+
+![picture that shows where the correct letters are shown in the game](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/letsgo-button.webp)
+
+    - If the guessed letter is wrong the player gets a message that says wrong letter and then shows the letter next to it. Each time the player guess a wrong letter that letter gets printed out next to the text wrong letter. In that way the player can keep track on which letter they already has guessed that are wrong.
+
+![picture that shows the "wrong letter" message](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/letsgo-button.webp)
+
+    - The third thing the game checks is if the guessed letter already has been guessed. If its already been guessed the player get a message that says "You already guessed that"
+
+![picture that shows the message that pops up if the player already has guessed a letter they choose to guess](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/letsgo-button.webp)
+
+- #### PLAY AGAIN INPUT
+
+    - When the player wins or loses the game he/she get to choose if they want to play again or not. 
 
 #### GAME AREA PAGE
 
