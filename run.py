@@ -161,7 +161,13 @@ while True:
     print('The medium difficulty got up til 6 letters.')
     print('And the hard difficulty got up til 9 letters.')
     print('')
+    print('HOW TO PLAY:')
+    print('To guess a letter or choose a input')
+    print('just write the letter or word directly in the terminal')
+    print('and press ENTER')
+    print('')
     print('You got 6 tries to guess the correct word.')
+    print('Good luck!')
 
     # functions that shows how many letters the choosen word have
     def update_correct_letters(correct_guess):

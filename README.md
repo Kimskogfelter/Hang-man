@@ -141,6 +141,7 @@ The lifes are shown as hearts above the hangman picture. So the player easy can 
     - I tried to guess "l" as the correct first letter for the word "luigi". Then guess a wrong letter, to then guess "i". The bug didnt show. Both "i" still printed out
     - I tried to end the game early by typing CTRL+C in the terminal. And then restart a new game after that by usin the "up arrow" so the terminal starts the game by printing out "python3 run.py" to see if the bug was going to show. The game still printed out both "i". 
     - I tried to run several games after eachother by winning or losing the game and choose to play again. The bug still didnt show and printed both "o" to the word boo, and both "i" to the word luigi
+I still havent found what makes this bug appear.
 
 ### DEPLOYMENT
 
