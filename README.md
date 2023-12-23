@@ -134,16 +134,25 @@ The lifes are shown as hearts above the hangman picture. So the player easy can 
 
 #### BUGS
 
-- Ive noticed one bug that only appears sometimes. Its that the game sometimes only print one guessed letter ive if the correct word got more then one of that letter. I have tried the following things to try and locate where the bug happends:
-    - 
+- Ive noticed one bug that only appears sometimes. Its that the game sometimes only print one correct guessed letter ive if the correct word got more then one of that letter. Ive debugged the game by using the word "boo" and "luigi". I have tried the following things to try and locate where the bug happends:
+    - I tried to guess "o" as the first correct guessed letter in the first game the console runs. The bug didnt show. The game printed out both "o"
+    - I tried to guess the "b" first then the "o". The bug didnt show. The game printed out both "o"
+    - I tried to guess the wrong letter 5 times so I only got 1 life left and the guessed "o". The bug didnt show. The game printed out both "o"
+    - I tried to guess "l" as the correct first letter for the word "luigi". Then guess a wrong letter, to then guess "i". The bug didnt show. Both "i" still printed out
+    - I tried to end the game early by typing CTRL+C in the terminal. And then restart a new game after that by usin the "up arrow" so the terminal starts the game by printing out "python3 run.py" to see if the bug was going to show. The game still printed out both "i". 
+    - I tried to run several games after eachother by winning or losing the game and choose to play again. The bug still didnt show and printed both "o" to the word boo, and both "i" to the word luigi
 
 ### DEPLOYMENT
 
 ---
-    This project was deployed via Github to Heroku. The following steps shows how you do it:
+    This project was deployed via Github to Heroku. Make sure that you have added your dependencies to the requirements.txt file before you do this or it might not work. The following steps shows how you deploy it to Heroku:
 
 1. Log in to your Github and deploy your repository.
 2. Make a account on the Heroku website if you dont got one already [https://id.heroku.com/login]
+3. Fork or clone your repository
+4. Set the buildbacks to Python as the first one, and NodeJS as the second
+5. Link your Heroku accoun to the correct repository
+6. Click on deploy
 
 ### CREDITS
 
