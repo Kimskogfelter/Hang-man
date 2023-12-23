@@ -122,55 +122,28 @@ The lifes are shown as hearts above the hangman picture. So the player easy can 
 
 ---
 
-- I tested the game works as it should in Chrome, Firefox and Edge browser
+- I tested the game works as it should in Chrome, Firefox and Edge browser.
+- I tested that the guess letter input was working as it should by putting wrong inputs such as no letter, double letter or the same letter twice or more to see that the correct prints was printed out.
+- I tested that the prints was working trough out the process of making the game by running just that part of the function or method.
+- I tested that the variables which generates a random word was working by playing again when the game was over to see that another word was generated and not the same one that i had in the game before. 
+- I tested that the play again input "yes" worked as it should by choosing "yes" so the game restarts where the player can choose a difficulty. 
+- I tested that the play again input "no" worked as it should by choosing "no" when the game is over to see that the console ends the game. 
+- I tested that each function was going through each stage correctly and didnt miss anything or produced any errors
 - I tested that all text is easy to read and to understand
 - The code got valified through PEP8 that is built in in the IDE i use
 
 #### BUGS
 
-- when I was finishing the page i noticed that the content on the index page wasnt centered on all devices. To  fix the issue i added min-height to both the html and body, and then the index-body which solved the issue because the body height tas stuck to the center of the page before that.
-- saw that when you press the "restart game" button when you have pressed one memory card and dont have pressed another one to be compared with, that card is "used" when you have restarted the game and is compared to the first card you choose. Unfortunately I dont got the time to try and fix that issue.
-
-#### LIGHTHOUSE
-
-#### I also tested the website in Lighthouse with the result below
-
-- #### Starting Page - Mobile version
-
-![lighthouse result for starting page, mobile version](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/lighthouse/lighthouse-startpage-mobile.webp)
-
-- #### Starting Page - Desktop version
-
-![lighthouse result for starting page, desktop version](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/lighthouse/lighthouse-startpage-desktop.webp)
-
-- #### Game Page - Mobile version
-
-![lighthouse result for game page, mobile version](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/lighthouse/lighthouse-gamepage-mobile.webp)
-
-- #### Game Page - Desktop version
-
-![lighthouse result for game page, desktop version](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/lighthouse/lighthouse-gamepage-desktop.webp)
+- Ive noticed one bug that only appears sometimes. Its that the game sometimes only print one guessed letter ive if the correct word got more then one of that letter. I have tried the following things to try and locate where the bug happends:
+    - 
 
 ### DEPLOYMENT
 
 ---
-    This project was deployed to Github.com. The following steps shows how you do it:
+    This project was deployed via Github to Heroku. The following steps shows how you do it:
 
-1. Log in to your Github.
-2. Go to the Super Mario repository in Github: [https://github.com/Kimskogfelter/Super-Mario]
-3. Select Settings in the repository navigation menu at the top.
-4. Select Pages at the left handside of the website.
-5. Choose: Deploy from a branch as Source.
-6. Choose: Main as branch and /root as folder and press save.
-7. Wait a few minutes and press the Code menu to the top left.
-8. At the right handside go to Deployment.
-9. Then press the ![picture of the deployment icon on github](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/deployment-icon.webp) to go to the live website.
-
-### ISSUES
-
----
-
-- Ive been having a really hard time to understand javascript. Its been alot happening at home during this time with the kids having to be home due to us moving to a new home and my husbands mom dying. The funural was 1 december so I havent been having the time to finish the project as I would like to. Im aware that I can have used to little own code, hopefully thats not the case.
+1. Log in to your Github and deploy your repository.
+2. Make a account on the Heroku website if you dont got one already [https://id.heroku.com/login]
 
 ### CREDITS
 
