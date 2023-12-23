@@ -94,77 +94,39 @@ The lifes are shown as hearts above the hangman picture. So the player easy can 
 
 - #### PLAY AGAIN INPUT
 
-    - When the player wins or loses the game he/she get to choose if they want to play again or not. 
+    - When the player wins or loses the game he/she get to choose if they want to play again or not. The game then checks if the input the player has choosen is either "yes" or "no". If "yes" the game restarts from where the player get to choose a new difficulty level. 
 
-#### GAME AREA PAGE
+![picture that shows the message that pops up if the player want to restart the game](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/letsgo-button.webp)
 
-- #### MOVES SECTION
+    - If the player choose "no" the game ends. 
 
-  - The memory game has a section that counts how many moves the user does during the game
+![picture that shows the message that pops up if the player want to end the game](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/letsgo-button.webp)
 
-![picture of the moves section](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/moves.webp)
+    - If the player write something else then "yes" or "no" a message pop up saying that the message is invalid. And then asks them again if they want to play again, and to choose either "yes" or "no"
 
-- #### TIMER SECTION
+![picture that shows the message that pops up if the player write a invalid input](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/letsgo-button.webp)
 
-  - The timer starts as soon as the user press "play" and stops when the player completes or pause the game.
+#### DATA MODEL
+- #### 
 
-![picture of the timer section](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/timer.webp)
+  - 
 
-- #### MEMORY CARDS
-
-  - The memory cards is used to play the game. The user click on one to switch the card and then chooses another one in hope that they are the matching pair.
-  - The front of the cards is the question block from the Super Mario game.
-
-![picture of the front memory cards](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/memorycards.webp)
-
-- When a user click on one card a creature from the Super Mario game appears.
-
-![picture of a clicked memory card](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/memorycards-clicked.webp)
-
-- #### RESTART BUTTON
-
-  - At the bottom of the game area is a restart" button which the user can click on to restart the game.
-
-![picture of the "play/pause" button](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/restart-button.webp)
-
-- #### WINNING DIV
-  
-  - When a user wins the game a div pops up with the text "You made it! Congratulations!"
-  - A button appears below the text that says "Play One More Time" which the user can press to restart the game and play again
-
-![picture of the content that pops up when the user wins the game](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/winning-div.webp)
+![picture of ](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/moves.webp)
 
 ### TECHNOLOGIES
 
 ---
 
-- [https://jigsaw.w3.org/css-validator/] to validate css code
-- [https://fsymbols.com/generators/] to generate the text for the print "hangman", "You won!" and "Game over! You lose"
-
-### WIREFRAMES
-
----
-
-#### STARTING PAGE
-
-![Starting page made in wireframes](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/wireframes/start-page-wireframe.webp)
-
-#### GAME PAGE
-
-![Game page made in wireframes](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/wireframes/game-area-wireframe.webp)
-
-#### WINNING PAGE
-
-![Winning page made in wireframes](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/wireframes/win-result-wireframe.webp)
+- PEP8 to validate python code
+- [https://fsymbols.com/generators/] to generate the text for the print "hangman", "You won! Congratulations", "Game over! You lose" and the hearts which shows the lifes
 
 ### TESTING
 
 ---
 
-- I tested the website in Chrome, Firefox and Edge browser to see that all pages loaded and that every button and function was working correctly.
-- The site is also responsive which I tested in google chromes devtools by selecting different screensizes and test each function
+- I tested the game works as it should in Chrome, Firefox and Edge browser
 - I tested that all text is easy to read and to understand
-- The code got valified through both HTML, CSS and JS validators
+- The code got valified through PEP8 that is built in in the IDE i use
 
 #### BUGS
 
