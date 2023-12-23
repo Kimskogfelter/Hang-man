@@ -60,51 +60,51 @@ The lifes are shown as hearts above the hangman picture. So the player easy can 
 
 - #### The game got 3 different difficulties that the user can choose from in the beginning of the game. Easy, medium and hard. The easy difficulty got up to 4 letters in the choosen word, the medium got up to 6 letters and the hard got up to 9 letters. 
 
-![picture of the part where the user choose the difficulty level](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/heading.webp)
+![picture of the part where the user choose the difficulty level](https://raw.githubusercontent.com/Kimskogfelter/Hangman/main/assets/images/readme/choose-degree-of-difficulty.webp)
 
 #### SHOWING LIFES
 
 - #### The player got 6 tries to guess the correct word. That is shown as hearts above the picture of the hangman so the player easy can see how many tries he/she got left before they lose. 
 
-![picture of the hearts that shows how many lifes the player got left](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/image-startpage.webp)
+![picture of the hearts that shows how many lifes the player got left](https://raw.githubusercontent.com/Kimskogfelter/Hangman/main/assets/images/readme/showing-lifes.webp)
 
 #### INPUT VALIDATION
 
 - #### CHOOSEN DIFFICULTY INPUT
     - Here the game checks if the choosen difficulty level is correct. If the player has written something else then easy, medium or hard they get a message that tells them that its invalid and they need to choose either easy, medium or hard.
 
-![picture of the message that comes when the player write something else then easy, medium or hard when choosing a difficulty](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/letsgo-button.webp)
+![picture of the message that comes when the player write something else then easy, medium or hard when choosing a difficulty](https://raw.githubusercontent.com/Kimskogfelter/Hangman/main/assets/images/readme/choose-degree-of-difficulty-invalid-message.webp)
 
 - #### GUESS A LETTER INPUT
     - When the player is going to guess a letter the game checks for several things. The first thing it checks if its the player only guessed one letter. If he/she guessed more then one letter the game shows a message that they need to guess at one letter at a time. 
 
-![picture of the message that comes when the player guess more then one letter](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/letsgo-button.webp)
+![picture of the message that comes when the player guess more then one letter](https://raw.githubusercontent.com/Kimskogfelter/Hangman/main/assets/images/readme/guessing-more-then-one-letter-message.webp)
 
     - The second thing the game checks is if the letter is correct or not. If the letter is correct it gets printed out so the player can see where the correct letter is in the choosen word.
 
-![picture that shows where the correct letters are shown in the game](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/letsgo-button.webp)
+![picture that shows where the correct letters are shown in the game](https://raw.githubusercontent.com/Kimskogfelter/Hangman/main/assets/images/readme/correct-guessed-letters.webp)
 
     - If the guessed letter is wrong the player gets a message that says wrong letter and then shows the letter next to it. Each time the player guess a wrong letter that letter gets printed out next to the text wrong letter. In that way the player can keep track on which letter they already has guessed that are wrong.
 
-![picture that shows the "wrong letter" message](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/letsgo-button.webp)
+![picture that shows the "wrong letter" message](https://raw.githubusercontent.com/Kimskogfelter/Hangman/main/assets/images/readme/wrong-letters.webp)
 
     - The third thing the game checks is if the guessed letter already has been guessed. If its already been guessed the player get a message that says "You already guessed that"
 
-![picture that shows the message that pops up if the player already has guessed a letter they choose to guess](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/letsgo-button.webp)
+![picture that shows the message that pops up if the player already has guessed a letter they choose to guess](https://raw.githubusercontent.com/Kimskogfelter/Hangman/main/assets/images/readme/you-already-guessed-that-message.webp)
 
 - #### PLAY AGAIN INPUT
 
     - When the player wins or loses the game he/she get to choose if they want to play again or not. The game then checks if the input the player has choosen is either "yes" or "no". If "yes" the game restarts from where the player get to choose a new difficulty level. 
 
-![picture that shows the message that pops up if the player want to restart the game](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/letsgo-button.webp)
+![picture that shows the message that pops up if the player want to restart the game](https://raw.githubusercontent.com/Kimskogfelter/Hangman/main/assets/images/readme/do-you-want-to-play-again-yes.webp)
 
     - If the player choose "no" the game ends. 
 
-![picture that shows the message that pops up if the player want to end the game](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/letsgo-button.webp)
+![picture that shows the message that pops up if the player want to end the game](https://raw.githubusercontent.com/Kimskogfelter/Hangman/main/assets/images/readme/do-you-want-to-play-again-no.webp)
 
     - If the player write something else then "yes" or "no" a message pop up saying that the message is invalid. And then asks them again if they want to play again, and to choose either "yes" or "no"
 
-![picture that shows the message that pops up if the player write a invalid input](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/letsgo-button.webp)
+![picture that shows the message that pops up if the player write a invalid input](https://raw.githubusercontent.com/Kimskogfelter/Hangman/main/assets/images/readme/do-you-want-to-play-again-invalid-answer.webp)
 
 #### DATA MODEL
 - #### The game uses arrays to store the different words which are used for the different difficulties. It also stores the correct and wrong guess in a temporary array. The correct guess array stores the correct letters that the player has guessed, and the wrong guess array stores all the wrong letters who then prints out to the player during the game. When the correct array no longer has any "_" in it the player wins and the win statement is printed out. If the player fails to guess the correct word for 6 tries the losing statement is printed. The 6 tries is stored on the wrong guess array. If the player choose to play again when the game is over the array for the choosen word randomizes a new word through a random.choice generator. So the user dont have to guess on the same word again. The arrays for the correct and wrong answer gets reseted so the game dont store the letters from the last game. The game also uses inputs so the player can choose which difficulty level they want and if they want to play again when the game is over.    
