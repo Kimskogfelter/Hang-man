@@ -58,13 +58,13 @@ The lifes are shown as hearts above the hangman picture. So the player easy can 
 
 #### DIFFICULTY LEVELS
 
-- #### The game got 3 different difficulties that the user can choose from in the beginning of the game. Easy, medium and hard. The easy difficulty got up to 4 letters in the choosen word, the medium got up to 6 letters and the hard got up to 9 letters. 
+- The game got 3 different difficulties that the user can choose from in the beginning of the game. Easy, medium and hard. The easy difficulty got up to 4 letters in the choosen word, the medium got up to 6 letters and the hard got up to 9 letters. 
 
 ![picture of the part where the user choose the difficulty level](https://raw.githubusercontent.com/Kimskogfelter/Hangman/main/assets/images/readme/choose-degree-of-difficulty.webp)
 
 #### SHOWING LIFES
 
-- #### The player got 6 tries to guess the correct word. That is shown as hearts above the picture of the hangman so the player easy can see how many tries he/she got left before they lose. 
+- The player got 6 tries to guess the correct word. That is shown as hearts above the picture of the hangman so the player easy can see how many tries he/she got left before they lose. 
 
 ![picture of the hearts that shows how many lifes the player got left](https://raw.githubusercontent.com/Kimskogfelter/Hangman/main/assets/images/readme/showing-lifes.webp)
 
@@ -107,7 +107,7 @@ The lifes are shown as hearts above the hangman picture. So the player easy can 
 ![picture that shows the message that pops up if the player write a invalid input](https://raw.githubusercontent.com/Kimskogfelter/Hangman/main/assets/images/readme/do-you-want-to-play-again-invalid-answer.webp)
 
 #### DATA MODEL
-- #### The game uses arrays to store the different words which are used for the different difficulties. It also stores the correct and wrong guess in a temporary array. The correct guess array stores the correct letters that the player has guessed, and the wrong guess array stores all the wrong letters who then prints out to the player during the game. When the correct array no longer has any "_" in it the player wins and the win statement is printed out. If the player fails to guess the correct word for 6 tries the losing statement is printed. The 6 tries is stored on the wrong guess array. If the player choose to play again when the game is over the array for the choosen word randomizes a new word through a random.choice generator. So the user dont have to guess on the same word again. The arrays for the correct and wrong answer gets reseted so the game dont store the letters from the last game. The game also uses inputs so the player can choose which difficulty level they want and if they want to play again when the game is over.    
+- The game uses arrays to store the different words which are used for the different difficulties. It also stores the correct and wrong guess in a temporary array. The correct guess array stores the correct letters that the player has guessed, and the wrong guess array stores all the wrong letters who then prints out to the player during the game. When the correct array no longer has any "_" in it the player wins and the win statement is printed out. If the player fails to guess the correct word for 6 tries the losing statement is printed. The 6 tries is stored on the wrong guess array. If the player choose to play again when the game is over the array for the choosen word randomizes a new word through a random.choice generator. So the user dont have to guess on the same word again. The arrays for the correct and wrong answer gets reseted so the game dont store the letters from the last game. The game also uses inputs so the player can choose which difficulty level they want and if they want to play again when the game is over.    
 
 
 
