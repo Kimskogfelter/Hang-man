@@ -107,11 +107,9 @@ The lifes are shown as hearts above the hangman picture. So the player easy can 
 ![picture that shows the message that pops up if the player write a invalid input](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/letsgo-button.webp)
 
 #### DATA MODEL
-- #### 
+- #### The game uses arrays to store the different words which are used for the different difficulties. It also stores the correct and wrong guess in a temporary array. The correct guess array stores the correct letters that the player has guessed, and the wrong guess array stores all the wrong letters who then prints out to the player during the game. When the correct array no longer has any "_" in it the player wins and the win statement is printed out. If the player fails to guess the correct word for 6 tries the losing statement is printed. The 6 tries is stored on the wrong guess array. If the player choose to play again when the game is over the array for the choosen word randomizes a new word through a random.choice generator. So the user dont have to guess on the same word again. The arrays for the correct and wrong answer gets reseted so the game dont store the letters from the last game. The game also uses inputs so the player can choose which difficulty level they want and if they want to play again when the game is over.    
 
-  - 
 
-![picture of ](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/moves.webp)
 
 ### TECHNOLOGIES
 
