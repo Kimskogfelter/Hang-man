@@ -95,7 +95,7 @@ def hangman_parts(x):
 
 def lifes(y):
     if y == 0:
-        print('♥ ♥ ♥ ♥ ♥ ♥')         
+        print('♥ ♥ ♥ ♥ ♥ ♥')        
     if y == 1:
         print('♥ ♥ ♥ ♥ ♥ ♡')     
     if y == 2:
@@ -112,10 +112,9 @@ def lifes(y):
 # print out word by word
 
 
-def print_word_by_word(text, delay=0.1):
-    words = text.split()
-    for word in words:
-        print(word, end=' ', flush=True)
+def print_letter_by_letter(text, delay=0.1):
+    for char in text:
+        print(char, end='', flush=True)
         sleep(delay)
     print()
 
@@ -124,60 +123,68 @@ def print_word_by_word(text, delay=0.1):
 
 while True:
     print('')
-    print_word_by_word('Hi and welcome to')
-    print_word_by_word('')
+    print_letter_by_letter('Hi and welcome to')
+    print_letter_by_letter('')
 
-    print('██╗░░██╗░█████╗░███╗░░██╗░██████╗░███╗░░░███╗░█████╗░███╗░░██╗')
-    print('██║░░██║██╔══██╗████╗░██║██╔════╝░████╗░████║██╔══██╗████╗░██║')
-    print('███████║███████║██╔██╗██║██║░░██╗░██╔████╔██║███████║██╔██╗██║')
-    print('██╔══██║██╔══██║██║╚████║██║░░╚██╗██║╚██╔╝██║██╔══██║██║╚████║')
-    print('██║░░██║██║░░██║██║░╚███║╚██████╔╝██║░╚═╝░██║██║░░██║██║░╚███║')
-    print('╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝░╚═════╝░╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝')
-    print('')
-    print('░██████╗██╗░░░██╗██████╗░███████╗██████╗░'
-          '███╗░░░███╗░█████╗░██████╗░██╗░█████╗░')
-    print('██╔════╝██║░░░██║██╔══██╗██╔════╝██╔══██╗'
-          '████╗░████║██╔══██╗██╔══██╗██║██╔══██╗')
-    print('╚█████╗░██║░░░██║██████╔╝█████╗░░██████╔╝'
-          '██╔████╔██║███████║██████╔╝██║██║░░██║')
-    print('░╚═══██╗██║░░░██║██╔═══╝░██╔══╝░░██╔══██╗'
-          '██║╚██╔╝██║██╔══██║██╔══██╗██║██║░░██║')
-    print('██████╔╝╚██████╔╝██║░░░░░███████╗██║░░██║'
-          '██║░╚═╝░██║██║░░██║██║░░██║██║╚█████╔╝')
-    print('╚═════╝░░╚═════╝░╚═╝░░░░░╚══════╝╚═╝░░╚═╝'
-          '╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░╚════╝░')
-    print('')
-    print('███████╗██████╗░██╗████████╗██╗░█████╗░███╗░░██╗')
-    print('██╔════╝██╔══██╗██║╚══██╔══╝██║██╔══██╗████╗░██║')
-    print('█████╗░░██║░░██║██║░░░██║░░░██║██║░░██║██╔██╗██║')
-    print('██╔══╝░░██║░░██║██║░░░██║░░░██║██║░░██║██║╚████║')
-    print('███████╗██████╔╝██║░░░██║░░░██║╚█████╔╝██║░╚███║')
-    print('╚══════╝╚═════╝░╚═╝░░░╚═╝░░░╚═╝░╚════╝░╚═╝░░╚══╝')
-    print('')
-    print('   ',  '------')
-    print('   ',  '|    |')
-    print('   ',  '|     ')
-    print('   ',  '|     ')
-    print('   ',  '|     ')
-    print('   ',  '|     ')
-    print('--------------')
-    print('')
-    print('The category is different characters from the Super Mario games.')
-    print('')
-    print('You got 3 different difficulties to choose from:')
-    print('Easy, medium and hard.')
-    print('')
-    print('The easy difficulty got up til 4 letters.')
-    print('The medium difficulty got up til 6 letters.')
-    print('And the hard difficulty got up til 9 letters.')
-    print('')
-    print('HOW TO PLAY:')
-    print('To guess a letter or choose a input')
-    print('just write the letter or word directly in the terminal')
-    print('and press ENTER')
-    print('')
-    print('You got 6 tries to guess the correct word.')
-    print('Good luck!')
+    print_letter_by_letter('██╗░░██╗░█████╗░███╗░░██╗░██████╗'
+                           '░███╗░░░███╗░█████╗░███╗░░██╗')
+    print_letter_by_letter('██║░░██║██╔══██╗████╗░██║██╔════╝'
+                           '░████╗░████║██╔══██╗████╗░██║')
+    print_letter_by_letter('███████║███████║██╔██╗██║██║░░██╗'
+                           '░██╔████╔██║███████║██╔██╗██║')
+    print_letter_by_letter('██╔══██║██╔══██║██║╚████║██║░░╚██╗'
+                           '██║╚██╔╝██║██╔══██║██║╚████║')
+    print_letter_by_letter('██║░░██║██║░░██║██║░╚███║╚██████╔╝'
+                           '██║░╚═╝░██║██║░░██║██║░╚███║')
+    print_letter_by_letter('╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝░╚═════╝░'
+                           '╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝')
+    print_letter_by_letter('')
+    print_letter_by_letter('░██████╗██╗░░░██╗██████╗░███████╗██████╗░'
+                           '███╗░░░███╗░█████╗░██████╗░██╗░█████╗░')
+    print_letter_by_letter('██╔════╝██║░░░██║██╔══██╗██╔════╝██╔══██╗'
+                           '████╗░████║██╔══██╗██╔══██╗██║██╔══██╗')
+    print_letter_by_letter('╚█████╗░██║░░░██║██████╔╝█████╗░░██████╔╝'
+                           '██╔████╔██║███████║██████╔╝██║██║░░██║')
+    print_letter_by_letter('░╚═══██╗██║░░░██║██╔═══╝░██╔══╝░░██╔══██╗'
+                           '██║╚██╔╝██║██╔══██║██╔══██╗██║██║░░██║')
+    print_letter_by_letter('██████╔╝╚██████╔╝██║░░░░░███████╗██║░░██║'
+                           '██║░╚═╝░██║██║░░██║██║░░██║██║╚█████╔╝')
+    print_letter_by_letter('╚═════╝░░╚═════╝░╚═╝░░░░░╚══════╝╚═╝░░╚═╝'
+                           '╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░╚════╝░')
+    print_letter_by_letter('')
+    print_letter_by_letter('███████╗██████╗░██╗████████╗██╗░█████╗░███╗░░██╗')
+    print_letter_by_letter('██╔════╝██╔══██╗██║╚══██╔══╝██║██╔══██╗████╗░██║')
+    print_letter_by_letter('█████╗░░██║░░██║██║░░░██║░░░██║██║░░██║██╔██╗██║')
+    print_letter_by_letter('██╔══╝░░██║░░██║██║░░░██║░░░██║██║░░██║██║╚████║')
+    print_letter_by_letter('███████╗██████╔╝██║░░░██║░░░██║╚█████╔╝██║░╚███║')
+    print_letter_by_letter('╚══════╝╚═════╝░╚═╝░░░╚═╝░░░╚═╝░╚════╝░╚═╝░░╚══╝')
+    print_letter_by_letter('')
+    print_letter_by_letter('   ',  '------')
+    print_letter_by_letter('   ',  '|    |')
+    print_letter_by_letter('   ',  '|     ')
+    print_letter_by_letter('   ',  '|     ')
+    print_letter_by_letter('   ',  '|     ')
+    print_letter_by_letter('   ',  '|     ')
+    print_letter_by_letter('--------------')
+    print_letter_by_letter('')
+    print_letter_by_letter('The category is different characters from the' 
+                           'Super Mario games.')
+    print_letter_by_letter('')
+    print_letter_by_letter('You got 3 different difficulties to choose from:')
+    print_letter_by_letter('Easy, medium and hard.')
+    print_letter_by_letter('')
+    print_letter_by_letter('The easy difficulty got up til 4 letters.')
+    print_letter_by_letter('The medium difficulty got up til 6 letters.')
+    print_letter_by_letter('And the hard difficulty got up til 9 letters.')
+    print_letter_by_letter('')
+    print_letter_by_letter('HOW TO PLAY:')
+    print_letter_by_letter('To guess a letter or choose a input')
+    print_letter_by_letter('just write the letter or word directly in the' 
+                           'terminal')
+    print_letter_by_letter('and press ENTER')
+    print_letter_by_letter('')
+    print_letter_by_letter('You got 6 tries to guess the correct word.')
+    print_letter_by_letter('Good luck!')
 
     # functions that shows how many letters the choosen word have
     def update_correct_letters(correct_guess):
