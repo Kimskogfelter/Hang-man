@@ -192,7 +192,7 @@ while True:
 
             # variable for the guess the user will choose
             print('')
-            guess = input("Guess a letter: ")
+            guess = input("Guess a letter: \n")
 
             # Check if the guessed input is more than one letter
             if len(guess) == 1:
@@ -244,7 +244,7 @@ while True:
                 print('█▄█ █▀█ █░▀░█ ██▄  █▄█ ▀▄▀ ██▄ █▀▄ ▄')
                 print('')
                 while True:
-                    play_again = input("Do you want to play again? (yes/no): ")
+                    play_again = input("Do you want to play again? (yes/no):\n ")
                     if play_again == 'yes':
                         doRunGame = False
                         break  # Start a new game with a new difficulty
@@ -266,7 +266,7 @@ while True:
                       '█▄▄ █▀█ ░█░ █ █▄█ █░▀█ ▄█')
                 print('')
                 while True:
-                    play_again = input("Do you want to play again? (yes/no): ")
+                    play_again = input("Do you want to play again? (yes/no): \n")
                     if play_again == 'yes':
                         doRunGame = False
                         break  # Start a new game with a new difficulty
@@ -280,7 +280,7 @@ while True:
     while True:
 
         difficulty = input("Please choose a degree of difficulty ('easy',"
-                           "'medium', or 'hard'): ")
+                           "'medium', or 'hard'): \n")
         if difficulty == 'easy':
             # variable that randomizes a word from the easy list
             random_word_easy = random.choice(words_easy)
