@@ -109,13 +109,23 @@ def lifes(y):
     if y == 6:
         print('♡ ♡ ♡ ♡ ♡ ♡')
 
+# print out word by word
+
+
+def print_word_by_word(text, delay=0.1):
+    words = text.split()
+    for word in words:
+        print(word, end=' ', flush=True)
+        sleep(delay)
+    print()
+
 # prints out the initial strings when the game starts
 
 
 while True:
     print('')
-    print('Hi and welcome to')
-    print('')
+    print_word_by_word('Hi and welcome to')
+    print_word_by_word('')
 
     print('██╗░░██╗░█████╗░███╗░░██╗░██████╗░███╗░░░███╗░█████╗░███╗░░██╗')
     print('██║░░██║██╔══██╗████╗░██║██╔════╝░████╗░████║██╔══██╗████╗░██║')
