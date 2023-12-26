@@ -244,7 +244,8 @@ while True:
                 print('█▄█ █▀█ █░▀░█ ██▄  █▄█ ▀▄▀ ██▄ █▀▄ ▄')
                 print('')
                 while True:
-                    play_again = input("Do you want to play again? (yes/no):\n ")
+                    play_again = input("Do you want to play again?" 
+                                       "(yes/no):\n")
                     if play_again == 'yes':
                         doRunGame = False
                         break  # Start a new game with a new difficulty
@@ -266,7 +267,8 @@ while True:
                       '█▄▄ █▀█ ░█░ █ █▄█ █░▀█ ▄█')
                 print('')
                 while True:
-                    play_again = input("Do you want to play again? (yes/no): \n")
+                    play_again = input("Do you want to play again?"
+                                       "(yes/no): \n")
                     if play_again == 'yes':
                         doRunGame = False
                         break  # Start a new game with a new difficulty
