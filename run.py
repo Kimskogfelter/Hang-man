@@ -109,7 +109,18 @@ def lifes(y):
     if y == 6:
         print('♡ ♡ ♡ ♡ ♡ ♡')
 
+
 # print out word by word
+
+
+def print_word_by_word(text, delay=0.1):
+    words = text.split()
+    for word in words:
+        print(word, end=' ', flush=True)
+        sleep(delay)
+    print()
+
+# print out letter by letter
 
 
 def print_letter_by_letter(text, delay=0.1):
@@ -126,38 +137,38 @@ while True:
     print_letter_by_letter('Hi and welcome to')
     print_letter_by_letter('')
 
-    print_letter_by_letter('██╗░░██╗░█████╗░███╗░░██╗░██████╗'
-                           '░███╗░░░███╗░█████╗░███╗░░██╗')
-    print_letter_by_letter('██║░░██║██╔══██╗████╗░██║██╔════╝'
-                           '░████╗░████║██╔══██╗████╗░██║')
-    print_letter_by_letter('███████║███████║██╔██╗██║██║░░██╗'
-                           '░██╔████╔██║███████║██╔██╗██║')
-    print_letter_by_letter('██╔══██║██╔══██║██║╚████║██║░░╚██╗'
-                           '██║╚██╔╝██║██╔══██║██║╚████║')
-    print_letter_by_letter('██║░░██║██║░░██║██║░╚███║╚██████╔╝'
-                           '██║░╚═╝░██║██║░░██║██║░╚███║')
-    print_letter_by_letter('╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝░╚═════╝░'
-                           '╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝')
-    print_letter_by_letter('')
-    print_letter_by_letter('░██████╗██╗░░░██╗██████╗░███████╗██████╗░'
-                           '███╗░░░███╗░█████╗░██████╗░██╗░█████╗░')
-    print_letter_by_letter('██╔════╝██║░░░██║██╔══██╗██╔════╝██╔══██╗'
-                           '████╗░████║██╔══██╗██╔══██╗██║██╔══██╗')
-    print_letter_by_letter('╚█████╗░██║░░░██║██████╔╝█████╗░░██████╔╝'
-                           '██╔████╔██║███████║██████╔╝██║██║░░██║')
-    print_letter_by_letter('░╚═══██╗██║░░░██║██╔═══╝░██╔══╝░░██╔══██╗'
-                           '██║╚██╔╝██║██╔══██║██╔══██╗██║██║░░██║')
-    print_letter_by_letter('██████╔╝╚██████╔╝██║░░░░░███████╗██║░░██║'
-                           '██║░╚═╝░██║██║░░██║██║░░██║██║╚█████╔╝')
-    print_letter_by_letter('╚═════╝░░╚═════╝░╚═╝░░░░░╚══════╝╚═╝░░╚═╝'
-                           '╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░╚════╝░')
-    print_letter_by_letter('')
-    print_letter_by_letter('███████╗██████╗░██╗████████╗██╗░█████╗░███╗░░██╗')
-    print_letter_by_letter('██╔════╝██╔══██╗██║╚══██╔══╝██║██╔══██╗████╗░██║')
-    print_letter_by_letter('█████╗░░██║░░██║██║░░░██║░░░██║██║░░██║██╔██╗██║')
-    print_letter_by_letter('██╔══╝░░██║░░██║██║░░░██║░░░██║██║░░██║██║╚████║')
-    print_letter_by_letter('███████╗██████╔╝██║░░░██║░░░██║╚█████╔╝██║░╚███║')
-    print_letter_by_letter('╚══════╝╚═════╝░╚═╝░░░╚═╝░░░╚═╝░╚════╝░╚═╝░░╚══╝')
+    print_word_by_word('██╗░░██╗░█████╗░███╗░░██╗░██████╗'
+                       '░███╗░░░███╗░█████╗░███╗░░██╗')
+    print_word_by_word('██║░░██║██╔══██╗████╗░██║██╔════╝'
+                       '░████╗░████║██╔══██╗████╗░██║')
+    print_word_by_word('███████║███████║██╔██╗██║██║░░██╗'
+                       '░██╔████╔██║███████║██╔██╗██║')
+    print_word_by_word('██╔══██║██╔══██║██║╚████║██║░░╚██╗'
+                       '██║╚██╔╝██║██╔══██║██║╚████║')
+    print_word_by_word('██║░░██║██║░░██║██║░╚███║╚██████╔╝'
+                       '██║░╚═╝░██║██║░░██║██║░╚███║')
+    print_word_by_word('╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝░╚═════╝░'
+                       '╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝')
+    print_word_by_word('')
+    print_word_by_word('░██████╗██╗░░░██╗██████╗░███████╗██████╗░'
+                       '███╗░░░███╗░█████╗░██████╗░██╗░█████╗░')
+    print_word_by_word('██╔════╝██║░░░██║██╔══██╗██╔════╝██╔══██╗'
+                       '████╗░████║██╔══██╗██╔══██╗██║██╔══██╗')
+    print_word_by_word('╚█████╗░██║░░░██║██████╔╝█████╗░░██████╔╝'
+                       '██╔████╔██║███████║██████╔╝██║██║░░██║')
+    print_word_by_word('░╚═══██╗██║░░░██║██╔═══╝░██╔══╝░░██╔══██╗'
+                       '██║╚██╔╝██║██╔══██║██╔══██╗██║██║░░██║')
+    print_word_by_word('██████╔╝╚██████╔╝██║░░░░░███████╗██║░░██║'
+                       '██║░╚═╝░██║██║░░██║██║░░██║██║╚█████╔╝')
+    print_word_by_word('╚═════╝░░╚═════╝░╚═╝░░░░░╚══════╝╚═╝░░╚═╝'
+                       '╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░╚════╝░')
+    print_word_by_word('')
+    print_word_by_word('███████╗██████╗░██╗████████╗██╗░█████╗░███╗░░██╗')
+    print_word_by_word('██╔════╝██╔══██╗██║╚══██╔══╝██║██╔══██╗████╗░██║')
+    print_word_by_word('█████╗░░██║░░██║██║░░░██║░░░██║██║░░██║██╔██╗██║')
+    print_word_by_word('██╔══╝░░██║░░██║██║░░░██║░░░██║██║░░██║██║╚████║')
+    print_word_by_word('███████╗██████╔╝██║░░░██║░░░██║╚█████╔╝██║░╚███║')
+    print_word_by_word('╚══════╝╚═════╝░╚═╝░░░╚═╝░░░╚═╝░╚════╝░╚═╝░░╚══╝')
     print_letter_by_letter('')
     print_letter_by_letter('   ',  '------')
     print_letter_by_letter('   ',  '|    |')
@@ -167,7 +178,7 @@ while True:
     print_letter_by_letter('   ',  '|     ')
     print_letter_by_letter('--------------')
     print_letter_by_letter('')
-    print_letter_by_letter('The category is different characters from the' 
+    print_letter_by_letter('The category is different characters from the'
                            'Super Mario games.')
     print_letter_by_letter('')
     print_letter_by_letter('You got 3 different difficulties to choose from:')
@@ -293,7 +304,7 @@ while True:
                         print("Thanks for playing. Goodbye!")
                         exit()
                     else:
-                        print("Invalid answer.")     
+                        print("Invalid answer.")    
     # main game loop
     # Check if the entered difficulty is valid
     while True:
