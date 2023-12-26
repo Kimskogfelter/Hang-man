@@ -1,4 +1,5 @@
 import random
+import time
 from time import sleep
 
 # variables that stores words used for the different lists
@@ -129,6 +130,17 @@ def print_letter_by_letter(text, delay=0.1):
         sleep(delay)
     print()
 
+
+# print out letter by letter for inputs
+
+
+def input_letter_by_letter(prompt):
+    for char in prompt:
+        print(char, end='', flush=True)
+        time.sleep(0.1)  # Adjust the delay as needed  
+    user_input = input()
+    return user_input
+
 # prints out the initial strings when the game starts
 
 
@@ -169,16 +181,20 @@ while True:
     print_word_by_word('██╔══╝░░██║░░██║██║░░░██║░░░██║██║░░██║██║╚████║')
     print_word_by_word('███████╗██████╔╝██║░░░██║░░░██║╚█████╔╝██║░╚███║')
     print_word_by_word('╚══════╝╚═════╝░╚═╝░░░╚═╝░░░╚═╝░╚════╝░╚═╝░░╚══╝')
-    print_letter_by_letter('')
-    print_letter_by_letter('   ',  '------')
-    print_letter_by_letter('   ',  '|    |')
-    print_letter_by_letter('   ',  '|     ')
-    print_letter_by_letter('   ',  '|     ')
-    print_letter_by_letter('   ',  '|     ')
-    print_letter_by_letter('   ',  '|     ')
-    print_letter_by_letter('--------------')
-    print_letter_by_letter('')
-    print_letter_by_letter('The category is different characters from the'
+    print_word_by_word('')
+    print_word_by_word('   ',  '------')
+    print_word_by_word('   ',  '|    |')
+    print_word_by_word('   ',  '|     ')
+    print_word_by_word('   ',  '|     ')
+    print_word_by_word('   ',  '|     ')
+    print_word_by_word('   ',  '|     ')
+    print_word_by_word('--------------')
+    print_word_by_word('')
+    print_letter_by_letter('The goal of the game is to guess the correct '
+                           'word ')
+    print_letter_by_letter('the computer randomizes for you.')
+    print_word_by_word('')
+    print_letter_by_letter('The category is different characters from the '
                            'Super Mario games.')
     print_letter_by_letter('')
     print_letter_by_letter('You got 3 different difficulties to choose from:')
@@ -190,10 +206,10 @@ while True:
     print_letter_by_letter('')
     print_letter_by_letter('HOW TO PLAY:')
     print_letter_by_letter('To guess a letter or choose a input')
-    print_letter_by_letter('just write the letter or word directly in the' 
+    print_letter_by_letter('just write the letter or word directly in the ' 
                            'terminal')
     print_letter_by_letter('and press ENTER')
-    print_letter_by_letter('')
+    print_word_by_word('')
     print_letter_by_letter('You got 6 tries to guess the correct word.')
     print_letter_by_letter('Good luck!')
 
@@ -206,7 +222,8 @@ while True:
     # function that starts the hangman game
     def play_game(random_word):
         # prints out how many letters the choosen word has
-        print('The word has', len(random_word), 'letters')
+        print_letter_by_letter('The word has ' + str(len(random_word)) +
+                               ' letters')
         print('')
 
         # Initialize variables at the beginning
@@ -220,7 +237,7 @@ while True:
 
             # variable for the guess the user will choose
             print('')
-            guess = input("Guess a letter: \n")
+            guess = input_letter_by_letter("Guess a letter: \n")
 
             # Check if the guessed input is more than one letter
             if len(guess) == 1:
@@ -228,7 +245,7 @@ while True:
                 # checks if the guessed letter is on the choosen word
                 # and puts it in the correct guess index if true
                 if guess in correct_guess:
-                    print('You already guessed that')
+                    print_letter_by_letter('You already guessed that')
                 elif guess in random_word:
                     # prints out the lifes
                     print('')
@@ -247,7 +264,7 @@ while True:
                 # letter already if the letter is already used
                 else:
                     if guess in wrong_guess:
-                        print('You already guessed that')
+                        print_letter_by_letter('You already guessed that')
                     elif guess not in wrong_guess:
                         wrong_guess.append(guess)
                         print('')
@@ -257,67 +274,69 @@ while True:
                         update_correct_letters(correct_guess)
                     # prints out if the user guessed a wrong letter
                     print('')
-                    print(f'Wrong letter {wrong_guess}')
+                    print_letter_by_letter(f'Wrong letter {wrong_guess}')
             else:
-                print("Please guess only one letter at a time.")
+                print_letter_by_letter('Please guess only one letter at a '
+                                       'time.')
             # checks if the wrong guesses is more then 5
             # then prints the losing statement
             if len(wrong_guess) > 5:
-                print(f'The correct word was {random_word}')
-                print()
-                print('█▄█ █▀█ █░█  █░░ █▀█ █▀ █▀▀ █')
-                print('░█░ █▄█ █▄█  █▄▄ █▄█ ▄█ ██▄ ▄')
+                print_letter_by_letter(f'The correct word was {random_word}')
                 print('')
-                print('█▀▀ ▄▀█ █▀▄▀█ █▀▀  █▀█ █░█ █▀▀ █▀█ ░')
-                print('█▄█ █▀█ █░▀░█ ██▄  █▄█ ▀▄▀ ██▄ █▀▄ ▄')
+                print_word_by_word('█▄█ █▀█ █░█  █░░ █▀█ █▀ █▀▀ █')
+                print_word_by_word('░█░ █▄█ █▄█  █▄▄ █▄█ ▄█ ██▄ ▄')
+                print('')
+                print_word_by_word('█▀▀ ▄▀█ █▀▄▀█ █▀▀  █▀█ █░█ █▀▀ █▀█ ░')
+                print_word_by_word('█▄█ █▀█ █░▀░█ ██▄  █▄█ ▀▄▀ ██▄ █▀▄ ▄')
                 print('')
                 while True:
-                    play_again = input("Do you want to play again?" 
-                                       "(yes/no):\n")
+                    play_again = input_letter_by_letter("Do you want to play " 
+                                                        "again? (yes/no):\n")
                     if play_again == 'yes':
                         doRunGame = False
                         break  # Start a new game with a new difficulty
                     elif play_again == 'no':
-                        print("Thanks for playing. Goodbye!")
+                        print_letter_by_letter("Thanks for playing. Goodbye!")
                         exit()
                     else:
-                        print("Invalid answer.")
+                        print_letter_by_letter("Invalid answer.")
 
             if '_' not in correct_guess:
                 print('')
-                print('█▄█ █▀█ █░█  █░█░█ █▀█ █▄░█ █')
-                print('░█░ █▄█ █▄█  ▀▄▀▄▀ █▄█ █░▀█ ▄')
+                print_word_by_word('█▄█ █▀█ █░█  █░█░█ █▀█ █▄░█ █')
+                print_word_by_word('░█░ █▄█ █▄█  ▀▄▀▄▀ █▄█ █░▀█ ▄')
                 print('')
 
-                print('█▀▀ █▀█ █▄░█ █▀▀ █▀█ ▄▀█ ▀█▀ █░█'
-                      '█░░ ▄▀█ ▀█▀ █ █▀█ █▄░█ █▀')
-                print('█▄▄ █▄█ █░▀█ █▄█ █▀▄ █▀█ ░█░ █▄█'
-                      '█▄▄ █▀█ ░█░ █ █▄█ █░▀█ ▄█')
+                print_word_by_word('█▀▀ █▀█ █▄░█ █▀▀ █▀█ ▄▀█ ▀█▀ █░█'
+                                   '█░░ ▄▀█ ▀█▀ █ █▀█ █▄░█ █▀')
+                print_word_by_word('█▄▄ █▄█ █░▀█ █▄█ █▀▄ █▀█ ░█░ █▄█'
+                                   '█▄▄ █▀█ ░█░ █ █▄█ █░▀█ ▄█')
                 print('')
                 while True:
-                    play_again = input("Do you want to play again?"
-                                       "(yes/no): \n")
+                    play_again = input_letter_by_letter("Do you want to play " 
+                                                        "again? (yes/no): \n")
                     if play_again == 'yes':
                         doRunGame = False
                         break  # Start a new game with a new difficulty
                     elif play_again == 'no':
-                        print("Thanks for playing. Goodbye!")
+                        print_letter_by_letter("Thanks for playing. Goodbye!")
                         exit()
                     else:
-                        print("Invalid answer.")    
+                        print_letter_by_letter("Invalid answer.")    
     # main game loop
     # Check if the entered difficulty is valid
     while True:
 
-        difficulty = input("Please choose a degree of difficulty ('easy',"
-                           "'medium', or 'hard'): \n")
+        difficulty = input_letter_by_letter("Please choose a degree of "
+                                            "difficulty ('easy',"
+                                            "'medium', or 'hard'): \n")
         if difficulty == 'easy':
             # variable that randomizes a word from the easy list
             random_word_easy = random.choice(words_easy)
             # variable that adds the randomized word to the random_word var
             random_word = random_word_easy
             print('')
-            print(f'Let me think of a {difficulty} word...')
+            print_letter_by_letter(f'Let me think of a {difficulty} word...')
             waiting_time()
             play_game(random_word)
         elif difficulty == 'medium':
@@ -326,7 +345,7 @@ while True:
             # variable that adds the randomized word to the random_word var
             random_word = random_word_medium
             print('')
-            print(f'Let me think of a {difficulty} word...')
+            print_letter_by_letter(f'Let me think of a {difficulty} word...')
             waiting_time()
             play_game(random_word)
         elif difficulty == 'hard':
@@ -335,8 +354,8 @@ while True:
             # variable that adds the randomized word to the random_word var
             random_word = random_word_hard
             print('')
-            print(f'Let me think of a {difficulty} word...')
+            print_letter_by_letter(f'Let me think of a {difficulty} word...')
             waiting_time()
             play_game(random_word)
         else:
-            print("Invalid difficulty.")
+            print_letter_by_letter("Invalid difficulty.")
