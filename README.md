@@ -2,7 +2,7 @@
 
 ## HANGMAN 
 
-![picture of the mockup of the website](https://raw.githubusercontent.com/Kimskogfelter/Super-Mario/main/assets/images/readme/mockup-supermario.webp)
+![picture of the mockup of the website](https://raw.githubusercontent.com/Kimskogfelter/Hangman/main/assets/images/readme/mockup-hangman.webp)
 
 ### PURPOSE
 
