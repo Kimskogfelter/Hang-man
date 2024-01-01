@@ -102,7 +102,7 @@ def lifes(y):
     if y == 2:
         print('♥ ♥ ♥ ♥ ♡ ♡')     
     if y == 3:
-        print('♥ ♥ ♥ ♡ ♡ ♡')     
+        print('♥ ♥ ♥ ♡ ♡ ♡')    
     if y == 4:
         print('♥ ♥ ♡ ♡ ♡ ♡')  
     if y == 5:
@@ -182,17 +182,12 @@ while True:
     print_word_by_word('███████╗██████╔╝██║░░░██║░░░██║╚█████╔╝██║░╚███║')
     print_word_by_word('╚══════╝╚═════╝░╚═╝░░░╚═╝░░░╚═╝░╚════╝░╚═╝░░╚══╝')
     print_word_by_word('')
-    print_word_by_word('   ',  '------')
-    print_word_by_word('   ',  '|    |')
-    print_word_by_word('   ',  '|     ')
-    print_word_by_word('   ',  '|     ')
-    print_word_by_word('   ',  '|     ')
-    print_word_by_word('   ',  '|     ')
-    print_word_by_word('--------------')
-    print_word_by_word('')
     print_letter_by_letter('The goal of the game is to guess the correct '
                            'word ')
-    print_letter_by_letter('the computer randomizes for you.')
+    print_letter_by_letter('the computer randomizes for you before '
+                           'the whole picture ')
+    print_letter_by_letter('of the hangman is printed'
+                           ' and you lose the game.')
     print_word_by_word('')
     print_letter_by_letter('The category is different characters from the '
                            'Super Mario games.')
