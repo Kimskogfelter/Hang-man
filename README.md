@@ -110,6 +110,8 @@ The lifes are shown as hearts above the hangman picture. So the player easy can 
     - I tried to run several games after eachother by winning or losing the game and choose to play again. The bug still didnt show and printed both "o" to the word boo, and both "i" to the word luigi
 I still havent found what makes this bug appear.
 
+- Dont know if this is a bug but when Ive tried to delete trailing spaces in the code they wont go away. Its 11 trailing spaces that wont go away and exists in the code.
+
 ### DEPLOYMENT
 
 ---
